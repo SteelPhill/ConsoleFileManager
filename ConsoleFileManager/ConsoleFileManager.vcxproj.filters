@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\Interfaces">
+      <UniqueIdentifier>{f80feb2e-f2c8-4612-a930-062c7ff51023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands">
+      <UniqueIdentifier>{bbcc18f2-6f54-4624-8f77-02dfbe8a4c5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\ChangeCurrentDirectoryCommands">
+      <UniqueIdentifier>{e6031a5d-b484-449c-842b-730ecf687ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\CopyDirectoryCommands">
+      <UniqueIdentifier>{7b8cfa05-fb5d-45f0-b14a-61d16e954437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\CopyFileCommands">
+      <UniqueIdentifier>{0c6022b8-2612-4cd0-b0a8-97e87ade0d0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\CreateDirectoryCommands">
+      <UniqueIdentifier>{c58e30e8-211f-436d-9887-052761625b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\CreateFileCommands">
+      <UniqueIdentifier>{e43f98af-874a-4212-8af5-b93f6acd8589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\MainMenuCommands">
+      <UniqueIdentifier>{871720d6-1491-4a77-bcf5-4561c61b791d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\WorkingWithFilesCommands">
+      <UniqueIdentifier>{3c568ac6-ae7f-4087-9f5d-0b71a9ce1c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\WorkingWithDirectoriesCommands">
+      <UniqueIdentifier>{9129e050-0faf-474d-8beb-34bf95f430d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\SubstringCommands">
+      <UniqueIdentifier>{4a9d4ad8-b620-4f92-9088-0ea6e422266a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\ShowFileSizeCommands">
+      <UniqueIdentifier>{fc6bf008-7b79-4af5-b2a5-d6c7d45a8341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\ShowDirectorySizeCommands">
+      <UniqueIdentifier>{fb8184aa-a9c4-4b6a-be4e-59e5384ea0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\ShowDirectoryContentCommands">
+      <UniqueIdentifier>{22ca0476-5b50-41c1-baee-fe16eae7bddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\RenameFileCommands">
+      <UniqueIdentifier>{6c9b9562-a51a-419a-807b-eff96a527d53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\RenameDirectoryCommands">
+      <UniqueIdentifier>{dfec4cbc-7d41-4549-a2ca-4199597b0529}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\RemoveFileCommands">
+      <UniqueIdentifier>{079f1d05-1892-476e-acb1-b6c7850a9a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\RemoveDirectoryCommands">
+      <UniqueIdentifier>{155de9d0-90e2-495d-bdff-03d806a8bdf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\RelocateDirectoryCommands">
+      <UniqueIdentifier>{96c9b95a-ad21-484d-bff8-4c99236b87f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Commands\RelocateFileCommands">
+      <UniqueIdentifier>{7f2dbc49-7719-4ffd-807d-379bde05ec4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Menu">
+      <UniqueIdentifier>{70f8b075-9f95-4761-a463-19d49fbbd1af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands">
+      <UniqueIdentifier>{5528cb6e-b858-42d9-a125-8d2386730df9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\ChangeCurrentDirectoryCommands">
+      <UniqueIdentifier>{0a2c2ef9-8e6e-4f61-b622-e2c68914f2d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\CopyDirectoryCommands">
+      <UniqueIdentifier>{f5d56a73-4053-4a10-b363-b140236ec15d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\CopyFileCommands">
+      <UniqueIdentifier>{291a96ee-934e-4288-93f0-c89a5e04e70a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\CreateDirectoryCommands">
+      <UniqueIdentifier>{49a8e5ea-83cd-4cbd-99e5-6557b68b4732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\CreateFileCommands">
+      <UniqueIdentifier>{bd8d9c99-84bc-4ff8-bdd8-148877fda9b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\MainMenuCommands">
+      <UniqueIdentifier>{e46a5466-1801-43a4-869c-8dc35178a54f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\WorkingWithFilesCommands">
+      <UniqueIdentifier>{599104bb-6cc1-4ec3-b00d-1be151ea7b2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\WorkingWithDirectoriesCommands">
+      <UniqueIdentifier>{683c289a-a73c-4b18-8412-2f430675032b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\SubstringCommands">
+      <UniqueIdentifier>{689d2eb7-4e42-44cd-9d17-14660f1dde0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\ShowFileSizeCommands">
+      <UniqueIdentifier>{f93f414c-21cb-4ded-97ba-a435147671f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\ShowDirectorySizeCommands">
+      <UniqueIdentifier>{4d83efab-9a30-4de3-ad9b-8b34df1587c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\ShowDirectoryContentCommands">
+      <UniqueIdentifier>{8b0f92df-d1b2-4604-a1a7-fe3723d296e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\RenameFileCommands">
+      <UniqueIdentifier>{190453cc-43c1-42a7-8465-42a4f9d5f5ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\RenameDirectoryCommands">
+      <UniqueIdentifier>{b9386944-d911-4937-8b13-6707a3c1a1bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\RemoveFileCommands">
+      <UniqueIdentifier>{b4f66b2e-4ffd-4503-8c3b-300801616605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\RemoveDirectoryCommands">
+      <UniqueIdentifier>{b782cf08-a608-4688-bd03-a8ae0504bc2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\RelocateDirectoryCommands">
+      <UniqueIdentifier>{50c81a00-1a67-4523-a379-b6848d0997bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Commands\RelocateFileCommands">
+      <UniqueIdentifier>{dc5c9936-8c9f-43c1-a2ac-445e27f5e04d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Menu">
+      <UniqueIdentifier>{2a79e874-3a2a-4ee1-a987-a740c5a69a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Helpers">
+      <UniqueIdentifier>{ee377881-6aa5-4fef-83b1-33b7e70cb1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Helpers">
+      <UniqueIdentifier>{885ac6b9-a203-4247-8d85-0b799a7dcd2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Logic">
+      <UniqueIdentifier>{12d63ee7-248e-4b77-aea8-7b5f62fe37db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Logic">
+      <UniqueIdentifier>{144de297-0974-4dd8-a4b6-9061bcec26ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeCurrentDirectoryToEnteredCommand.cpp">
+      <Filter>Исходные файлы\Commands\ChangeCurrentDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeCurrentDirectoryToPreviousCommand.cpp">
+      <Filter>Исходные файлы\Commands\ChangeCurrentDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeCurrentDirectoryToSelectedCommand.cpp">
+      <Filter>Исходные файлы\Commands\ChangeCurrentDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyDirectoryFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CopyDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CopyDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyEnteredFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\CopyFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyFileFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CopyFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateDirectoryInCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CreateDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateDirectoryInEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CreateDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateFileInCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CreateFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateFileInEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\CreateFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\MainMenuCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchSubstringCommand.cpp">
+      <Filter>Исходные файлы\Commands\MainMenuCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowDirectoryContentCommand.cpp">
+      <Filter>Исходные файлы\Commands\MainMenuCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkingWithDirectoriesCommand.cpp">
+      <Filter>Исходные файлы\Commands\MainMenuCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkingWithFilesCommand.cpp">
+      <Filter>Исходные файлы\Commands\MainMenuCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocateDirectoryFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RelocateDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocateEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RelocateDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocateFileFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RelocateFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocateEnteredFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\RelocateFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveDirectoryFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RemoveDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RemoveDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveEnteredFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\RemoveFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveFileFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RemoveFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameDirectoryFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RenameDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RenameDirectoryCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameEnteredFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\RenameFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameFileFromCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\RenameFileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowContentsCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowDirectoryContentCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowContentsEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowDirectoryContentCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowEnteredDirectorySizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowDirectorySizeCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowSelectedDirectorySizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowDirectorySizeCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowCurrentDirectorySizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowDirectorySizeCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowEnteredFileSizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowFileSizeCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowSelectedFileSizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\ShowFileSizeCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SubstringInCurrentAndNestedDirectoriesCommand.cpp">
+      <Filter>Исходные файлы\Commands\SubstringCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SubstringInEnteredAndNestedDirectoriesCommand.cpp">
+      <Filter>Исходные файлы\Commands\SubstringCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SubstringInOnlyCurrentDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\SubstringCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SubstringInOnlyEnteredDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\SubstringCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocateDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameDirectoryCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowDirectorySizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithFilesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithFilesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocateFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithFilesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithFilesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameFileCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithFilesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowFileSizeCommand.cpp">
+      <Filter>Исходные файлы\Commands\WorkingWithFilesCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="StringSpacesChecker.cpp">
+      <Filter>Исходные файлы\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ColoredTextConsoleWriter.cpp">
+      <Filter>Исходные файлы\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleStringReader.cpp">
+      <Filter>Исходные файлы\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenu.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenuSelector.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenuWriter.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryContentConsoleWriter.cpp">
+      <Filter>Исходные файлы\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoriesWorker.cpp">
+      <Filter>Исходные файлы\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="FilesWorker.cpp">
+      <Filter>Исходные файлы\Logic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChangeCurrentDirectoryToEnteredCommand.h">
+      <Filter>Файлы заголовков\Commands\ChangeCurrentDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeCurrentDirectoryToPreviousCommand.h">
+      <Filter>Файлы заголовков\Commands\ChangeCurrentDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeCurrentDirectoryToSelectedCommand.h">
+      <Filter>Файлы заголовков\Commands\ChangeCurrentDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="IStringReader.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenuCommand.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IColoredTextWriter.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyDirectoryFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CopyDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CopyDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyEnteredFileCommand.h">
+      <Filter>Файлы заголовков\Commands\CopyFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyFileFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CopyFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateDirectoryInCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CreateDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateDirectoryInEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CreateDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateFileInCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CreateFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateFileInEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\CreateFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectoriesWorker.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectoryContentWriter.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenu.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenuSelector.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenuWriter.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IFilesWorker.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\MainMenuCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchSubstringCommand.h">
+      <Filter>Файлы заголовков\Commands\MainMenuCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowDirectoryContentCommand.h">
+      <Filter>Файлы заголовков\Commands\MainMenuCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkingWithDirectoriesCommand.h">
+      <Filter>Файлы заголовков\Commands\MainMenuCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkingWithFilesCommand.h">
+      <Filter>Файлы заголовков\Commands\MainMenuCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocateDirectoryFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RelocateDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocateEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RelocateDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocateFileFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RelocateFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocateEnteredFileCommand.h">
+      <Filter>Файлы заголовков\Commands\RelocateFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="IStringSpacesChecker.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveDirectoryFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RemoveDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RemoveDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveEnteredFileCommand.h">
+      <Filter>Файлы заголовков\Commands\RemoveFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveFileFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RemoveFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameDirectoryFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RenameDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RenameDirectoryCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameEnteredFileCommand.h">
+      <Filter>Файлы заголовков\Commands\RenameFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameFileFromCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\RenameFileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowContentsCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowDirectoryContentCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowContentsEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowDirectoryContentCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowEnteredDirectorySizeCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowDirectorySizeCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowSelectedDirectorySizeCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowDirectorySizeCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowCurrentDirectorySizeCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowDirectorySizeCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowEnteredFileSizeCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowFileSizeCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowSelectedFileSizeCommand.h">
+      <Filter>Файлы заголовков\Commands\ShowFileSizeCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SubstringInCurrentAndNestedDirectoriesCommand.h">
+      <Filter>Файлы заголовков\Commands\SubstringCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SubstringInEnteredAndNestedDirectoriesCommand.h">
+      <Filter>Файлы заголовков\Commands\SubstringCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SubstringInOnlyCurrentDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\SubstringCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SubstringInOnlyEnteredDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\SubstringCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocateDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameDirectoryCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowDirectorySizeCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithDirectoriesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyFileCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithFilesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateFileCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithFilesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocateFileCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithFilesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveFileCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithFilesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameFileCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithFilesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowFileSizeCommand.h">
+      <Filter>Файлы заголовков\Commands\WorkingWithFilesCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMenu.h">
+      <Filter>Файлы заголовков\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMenuSelector.h">
+      <Filter>Файлы заголовков\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMenuWriter.h">
+      <Filter>Файлы заголовков\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="StringSpacesChecker.h">
+      <Filter>Файлы заголовков\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ColoredTextConsoleWriter.h">
+      <Filter>Файлы заголовков\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleStringReader.h">
+      <Filter>Файлы заголовков\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentDirectory.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryContentConsoleWriter.h">
+      <Filter>Файлы заголовков\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoriesWorker.h">
+      <Filter>Файлы заголовков\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="FilesWorker.h">
+      <Filter>Файлы заголовков\Logic</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

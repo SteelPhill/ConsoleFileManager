@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{ab36cbb1-4869-48c0-9f34-61019fe8731e}</ProjectGuid>
+    <RootNamespace>ConsoleFileManager</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ChangeCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="ChangeCurrentDirectoryToEnteredCommand.cpp" />
+    <ClCompile Include="ChangeCurrentDirectoryToPreviousCommand.cpp" />
+    <ClCompile Include="ChangeCurrentDirectoryToSelectedCommand.cpp" />
+    <ClCompile Include="ColoredTextConsoleWriter.cpp" />
+    <ClCompile Include="ConsoleStringReader.cpp" />
+    <ClCompile Include="CopyDirectoryCommand.cpp" />
+    <ClCompile Include="CopyDirectoryFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="CopyEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="CopyEnteredFileCommand.cpp" />
+    <ClCompile Include="CopyFileCommand.cpp" />
+    <ClCompile Include="CopyFileFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="CreateDirectoryCommand.cpp" />
+    <ClCompile Include="CreateDirectoryInCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="CreateDirectoryInEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="CreateFileCommand.cpp" />
+    <ClCompile Include="CreateFileInCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="CreateFileInEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="DirectoriesWorker.cpp" />
+    <ClCompile Include="DirectoryContentConsoleWriter.cpp" />
+    <ClCompile Include="ConsoleMenu.cpp" />
+    <ClCompile Include="ConsoleMenuSelector.cpp" />
+    <ClCompile Include="ConsoleMenuWriter.cpp" />
+    <ClCompile Include="FilesWorker.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RelocateDirectoryCommand.cpp" />
+    <ClCompile Include="RelocateDirectoryFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="RelocateEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="RelocateEnteredFileCommand.cpp" />
+    <ClCompile Include="RelocateFileCommand.cpp" />
+    <ClCompile Include="RelocateFileFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="RemoveDirectoryCommand.cpp" />
+    <ClCompile Include="RemoveDirectoryFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="RemoveEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="RemoveEnteredFileCommand.cpp" />
+    <ClCompile Include="RemoveFileCommand.cpp" />
+    <ClCompile Include="RemoveFileFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="RenameDirectoryCommand.cpp" />
+    <ClCompile Include="RenameDirectoryFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="RenameEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="RenameEnteredFileCommand.cpp" />
+    <ClCompile Include="RenameFileCommand.cpp" />
+    <ClCompile Include="RenameFileFromCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="SearchSubstringCommand.cpp" />
+    <ClCompile Include="ShowContentsCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="ShowContentsEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="ShowCurrentDirectorySizeCommand.cpp" />
+    <ClCompile Include="ShowDirectoryContentCommand.cpp" />
+    <ClCompile Include="ShowDirectorySizeCommand.cpp" />
+    <ClCompile Include="ShowEnteredDirectorySizeCommand.cpp" />
+    <ClCompile Include="ShowEnteredFileSizeCommand.cpp" />
+    <ClCompile Include="ShowFileSizeCommand.cpp" />
+    <ClCompile Include="ShowSelectedDirectorySizeCommand.cpp" />
+    <ClCompile Include="ShowSelectedFileSizeCommand.cpp" />
+    <ClCompile Include="StringSpacesChecker.cpp" />
+    <ClCompile Include="SubstringInCurrentAndNestedDirectoriesCommand.cpp" />
+    <ClCompile Include="SubstringInEnteredAndNestedDirectoriesCommand.cpp" />
+    <ClCompile Include="SubstringInOnlyCurrentDirectoryCommand.cpp" />
+    <ClCompile Include="SubstringInOnlyEnteredDirectoryCommand.cpp" />
+    <ClCompile Include="WorkingWithDirectoriesCommand.cpp" />
+    <ClCompile Include="WorkingWithFilesCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChangeCurrentDirectoryCommand.h" />
+    <ClInclude Include="ChangeCurrentDirectoryToEnteredCommand.h" />
+    <ClInclude Include="ChangeCurrentDirectoryToPreviousCommand.h" />
+    <ClInclude Include="ChangeCurrentDirectoryToSelectedCommand.h" />
+    <ClInclude Include="ColoredTextConsoleWriter.h" />
+    <ClInclude Include="ConsoleStringReader.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="CurrentDirectory.h" />
+    <ClInclude Include="CopyDirectoryCommand.h" />
+    <ClInclude Include="CopyDirectoryFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="CopyEnteredDirectoryCommand.h" />
+    <ClInclude Include="CopyEnteredFileCommand.h" />
+    <ClInclude Include="CopyFileCommand.h" />
+    <ClInclude Include="CopyFileFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="CreateDirectoryCommand.h" />
+    <ClInclude Include="CreateDirectoryInCurrentDirectoryCommand.h" />
+    <ClInclude Include="CreateDirectoryInEnteredDirectoryCommand.h" />
+    <ClInclude Include="CreateFileCommand.h" />
+    <ClInclude Include="CreateFileInCurrentDirectoryCommand.h" />
+    <ClInclude Include="CreateFileInEnteredDirectoryCommand.h" />
+    <ClInclude Include="DirectoriesWorker.h" />
+    <ClInclude Include="DirectoryContentConsoleWriter.h" />
+    <ClInclude Include="ConsoleMenu.h" />
+    <ClInclude Include="ConsoleMenuSelector.h" />
+    <ClInclude Include="ConsoleMenuWriter.h" />
+    <ClInclude Include="FilesWorker.h" />
+    <ClInclude Include="IColoredTextWriter.h" />
+    <ClInclude Include="IMenu.h" />
+    <ClInclude Include="IDirectoriesWorker.h" />
+    <ClInclude Include="IDirectoryContentWriter.h" />
+    <ClInclude Include="IMenuSelector.h" />
+    <ClInclude Include="IMenuWriter.h" />
+    <ClInclude Include="IFilesWorker.h" />
+    <ClInclude Include="IMenuCommand.h" />
+    <ClInclude Include="IStringReader.h" />
+    <ClInclude Include="IStringSpacesChecker.h" />
+    <ClInclude Include="RelocateDirectoryCommand.h" />
+    <ClInclude Include="RelocateDirectoryFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="RelocateEnteredDirectoryCommand.h" />
+    <ClInclude Include="RelocateEnteredFileCommand.h" />
+    <ClInclude Include="RelocateFileCommand.h" />
+    <ClInclude Include="RelocateFileFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="RemoveDirectoryCommand.h" />
+    <ClInclude Include="RemoveDirectoryFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="RemoveEnteredDirectoryCommand.h" />
+    <ClInclude Include="RemoveEnteredFileCommand.h" />
+    <ClInclude Include="RemoveFileCommand.h" />
+    <ClInclude Include="RemoveFileFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="RenameDirectoryCommand.h" />
+    <ClInclude Include="RenameDirectoryFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="RenameEnteredDirectoryCommand.h" />
+    <ClInclude Include="RenameEnteredFileCommand.h" />
+    <ClInclude Include="RenameFileCommand.h" />
+    <ClInclude Include="RenameFileFromCurrentDirectoryCommand.h" />
+    <ClInclude Include="SearchSubstringCommand.h" />
+    <ClInclude Include="ShowContentsCurrentDirectoryCommand.h" />
+    <ClInclude Include="ShowContentsEnteredDirectoryCommand.h" />
+    <ClInclude Include="ShowCurrentDirectorySizeCommand.h" />
+    <ClInclude Include="ShowDirectoryContentCommand.h" />
+    <ClInclude Include="ShowDirectorySizeCommand.h" />
+    <ClInclude Include="ShowEnteredDirectorySizeCommand.h" />
+    <ClInclude Include="ShowEnteredFileSizeCommand.h" />
+    <ClInclude Include="ShowFileSizeCommand.h" />
+    <ClInclude Include="ShowSelectedDirectorySizeCommand.h" />
+    <ClInclude Include="ShowSelectedFileSizeCommand.h" />
+    <ClInclude Include="StringSpacesChecker.h" />
+    <ClInclude Include="SubstringInCurrentAndNestedDirectoriesCommand.h" />
+    <ClInclude Include="SubstringInEnteredAndNestedDirectoriesCommand.h" />
+    <ClInclude Include="SubstringInOnlyCurrentDirectoryCommand.h" />
+    <ClInclude Include="SubstringInOnlyEnteredDirectoryCommand.h" />
+    <ClInclude Include="WorkingWithDirectoriesCommand.h" />
+    <ClInclude Include="WorkingWithFilesCommand.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
