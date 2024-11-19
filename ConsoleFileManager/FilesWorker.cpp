@@ -12,31 +12,31 @@ FilesWorker::~FilesWorker()
 
 void FilesWorker::Copy(const std::wstring& file, const std::wstring& destinationDirectory) const
 {
-    if (!std::filesystem::is_regular_file(file))
+    if (!fs::is_regular_file(file))
         throw std::wstring(L"File to copy does not exist");
 
-    if (!std::filesystem::is_directory(destinationDirectory))
+    if (!fs::is_directory(destinationDirectory))
         throw std::wstring(L"Destination directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(destinationDirectory);
+        fs::directory_iterator(destinationDirectory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to destination directory");
     }
 
     std::wstring copiedFilePath = destinationDirectory + L"\\" + file.substr(file.rfind(L"\\"), file.size());
 
-    if (std::filesystem::is_regular_file(copiedFilePath))
+    if (fs::is_regular_file(copiedFilePath))
         throw std::wstring(L"File with same name already exists in selected directory");
 
     try
     {
-        std::filesystem::copy_file(file, copiedFilePath);
+        fs::copy_file(file, copiedFilePath);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to file to copy");
     }
@@ -44,14 +44,14 @@ void FilesWorker::Copy(const std::wstring& file, const std::wstring& destination
 
 void FilesWorker::Create(const std::wstring& destinationDirectory, const std::wstring& name) const
 {
-    if (!std::filesystem::is_directory(destinationDirectory))
+    if (!fs::is_directory(destinationDirectory))
         throw std::wstring(L"Destination directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(destinationDirectory);
+        fs::directory_iterator(destinationDirectory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to destination directory");
     }
@@ -61,7 +61,7 @@ void FilesWorker::Create(const std::wstring& destinationDirectory, const std::ws
 
     std::wstring newFile = destinationDirectory + L"\\" + name;
 
-    if (std::filesystem::is_regular_file(newFile))
+    if (fs::is_regular_file(newFile))
         throw std::wstring(L"File with same name already exists in destination directory");
 
     std::ofstream file;
@@ -73,25 +73,25 @@ void FilesWorker::Create(const std::wstring& destinationDirectory, const std::ws
 
 unsigned long long FilesWorker::GetSizeInBytes(const std::wstring& file) const
 {
-    if (!std::filesystem::is_regular_file(file))
+    if (!fs::is_regular_file(file))
         throw std::wstring(L"File does not exist");
 
-    return std::filesystem::file_size(file);
+    return fs::file_size(file);
 }
 
 void FilesWorker::Relocate(const std::wstring& file, const std::wstring& destinationDirectory) const
 {
-    if (!std::filesystem::is_regular_file(file))
+    if (!fs::is_regular_file(file))
         throw std::wstring(L"File to relocate does not exist");
 
-    if (!std::filesystem::is_directory(destinationDirectory))
+    if (!fs::is_directory(destinationDirectory))
         throw std::wstring(L"Destination directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(destinationDirectory);
+        fs::directory_iterator(destinationDirectory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to destination directory");
     }
@@ -110,14 +110,14 @@ void FilesWorker::Relocate(const std::wstring& file, const std::wstring& destina
 
 void FilesWorker::Remove(const std::wstring& file) const
 {
-    if (!std::filesystem::is_regular_file(file))
+    if (!fs::is_regular_file(file))
         throw std::wstring(L"File to remove does not exist");
 
     try
     {
-        std::filesystem::remove(file);
+        fs::remove(file);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to file to remove");
     }
@@ -125,7 +125,7 @@ void FilesWorker::Remove(const std::wstring& file) const
 
 void FilesWorker::Rename(const std::wstring& file, const std::wstring& newName) const
 {
-    if (!std::filesystem::is_regular_file(file))
+    if (!fs::is_regular_file(file))
         throw std::wstring(L"File to rename does not exist");
 
     if (newName.empty() || spacesChecker->Check(newName))
@@ -135,9 +135,9 @@ void FilesWorker::Rename(const std::wstring& file, const std::wstring& newName) 
 
     try
     {
-        std::filesystem::rename(file, newFilePath);
+        fs::rename(file, newFilePath);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to file to rename");
     }

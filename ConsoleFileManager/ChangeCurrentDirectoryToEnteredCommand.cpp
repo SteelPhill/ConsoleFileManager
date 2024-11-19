@@ -30,7 +30,7 @@ void ChangeCurrentDirectoryToEnteredCommand::Execute() const
 	if (newCurrentDirectory.find(L"\\") == std::wstring::npos)
 		newCurrentDirectory += L"\\";
 
-	if (!std::filesystem::is_directory(newCurrentDirectory))
+	if (!fs::is_directory(newCurrentDirectory))
 		throw std::wstring(L"Directory does not exist");
 
 	CurrentDirectory::Path = newCurrentDirectory;

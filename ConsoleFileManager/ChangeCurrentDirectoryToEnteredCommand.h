@@ -8,6 +8,7 @@
 #include "ConsoleStringReader.h"
 #include "CurrentDirectory.h" 
 #include "StringSpacesChecker.h"
+namespace fs = std::filesystem;
 
 class ChangeCurrentDirectoryToEnteredCommand : public IMenuCommand
 {

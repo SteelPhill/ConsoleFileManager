@@ -6,8 +6,8 @@ std::vector<std::wstring> DirectoriesWorker::GetItems(const std::wstring& direct
 
     try
     {
-        std::filesystem::directory_iterator itr(directory);
-        std::filesystem::directory_entry entry;
+        fs::directory_iterator itr(directory);
+        fs::directory_entry entry;
 
         for (itr = begin(itr); itr != end(itr); ++itr)
         {
@@ -20,7 +20,7 @@ std::vector<std::wstring> DirectoriesWorker::GetItems(const std::wstring& direct
                 items.push_back(L"[FILE]" + entry.path().wstring());
         }
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory");
     }
@@ -30,24 +30,24 @@ std::vector<std::wstring> DirectoriesWorker::GetItems(const std::wstring& direct
 
 unsigned long long DirectoriesWorker::RecursiveGetSizeInBytes(const std::wstring& directory) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         return 0;
 
     unsigned long long size = 0;
 
     try
     {
-        std::filesystem::directory_iterator itr(directory);
-        std::filesystem::directory_entry entry;
+        fs::directory_iterator itr(directory);
+        fs::directory_entry entry;
 
         for (itr = begin(itr); itr != end(itr); ++itr)
         {
             entry = *itr;
 
-            if (std::filesystem::is_regular_file(entry.path()))
+            if (fs::is_regular_file(entry.path()))
                 size += file_size(entry.path());
 
-            if (std::filesystem::is_directory(entry.path()))
+            if (fs::is_directory(entry.path()))
                 size += RecursiveGetSizeInBytes(entry.path().wstring());
         }
     }
@@ -58,15 +58,15 @@ unsigned long long DirectoriesWorker::RecursiveGetSizeInBytes(const std::wstring
 
 std::wstring DirectoriesWorker::RecursiveSubstringSearch(const std::wstring& directory, const std::wstring& searchedText) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         return L"";
 
     std::wstring result;
     std::wstring objectPath;
-    std::filesystem::directory_iterator itr(directory);
-    std::filesystem::directory_entry entry;
+    fs::directory_iterator itr(directory);
+    fs::directory_entry entry;
 
-    if (std::filesystem::is_directory(directory))
+    if (fs::is_directory(directory))
     {
         for (itr = begin(itr); itr != end(itr); ++itr)
         {
@@ -75,12 +75,12 @@ std::wstring DirectoriesWorker::RecursiveSubstringSearch(const std::wstring& dir
                 entry = *itr;
                 objectPath = entry.path().wstring();
 
-                if (std::filesystem::is_regular_file(objectPath))
+                if (fs::is_regular_file(objectPath))
                 {
                     if (objectPath.find(searchedText) != std::wstring::npos)
                         result += L"[FILE]" + objectPath + L"\n";
                 }
-                else if (std::filesystem::is_directory(objectPath))
+                else if (fs::is_directory(objectPath))
                 {
                     if (objectPath.find(searchedText) != std::wstring::npos)
                         result += L"[DIR.]" + objectPath + L"\n";
@@ -88,7 +88,7 @@ std::wstring DirectoriesWorker::RecursiveSubstringSearch(const std::wstring& dir
                     result += RecursiveSubstringSearch(objectPath, searchedText);
                 }
             }
-            catch (const std::filesystem::filesystem_error&)
+            catch (const fs::filesystem_error&)
             {
                 result += L"[NO ACCESS]" + objectPath + L"\n";
             }
@@ -110,26 +110,26 @@ DirectoriesWorker::~DirectoriesWorker()
 
 void DirectoriesWorker::Copy(const std::wstring& directoryToCopy, const std::wstring& destinationDirectory) const
 {
-    if (!std::filesystem::is_directory(directoryToCopy))
+    if (!fs::is_directory(directoryToCopy))
         throw std::wstring(L"Directory to copy does not exist");
 
     try
     {
-        for (const auto& entry : std::filesystem::recursive_directory_iterator(directoryToCopy));
+        for (const auto& entry : fs::recursive_directory_iterator(directoryToCopy));
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory to copy or contain objects");
     }
 
-    if (!std::filesystem::is_directory(destinationDirectory))
+    if (!fs::is_directory(destinationDirectory))
         throw std::wstring(L"Destination directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(destinationDirectory);
+        fs::directory_iterator(destinationDirectory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to destination directory");
     }
@@ -137,25 +137,25 @@ void DirectoriesWorker::Copy(const std::wstring& directoryToCopy, const std::wst
     std::wstring copyDirectory = destinationDirectory + L"\\" + 
         directoryToCopy.substr(directoryToCopy.rfind(L"\\"), directoryToCopy.size());
 
-    if (std::filesystem::is_directory(copyDirectory))
+    if (fs::is_directory(copyDirectory))
         throw std::wstring(L"Directory with same name already exists in selected directory");
 
-    std::filesystem::create_directories(copyDirectory);
+    fs::create_directories(copyDirectory);
 
     std::error_code ec;
-    std::filesystem::copy(directoryToCopy, copyDirectory, std::filesystem::copy_options::recursive, ec);
+    fs::copy(directoryToCopy, copyDirectory, fs::copy_options::recursive, ec);
 }
 
 void DirectoriesWorker::Create(const std::wstring& destinationDirectory, const std::wstring& name) const
 {
-    if (!std::filesystem::is_directory(destinationDirectory))
+    if (!fs::is_directory(destinationDirectory))
         throw std::wstring(L"Destination directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(destinationDirectory);
+        fs::directory_iterator(destinationDirectory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to destination directory");
     }
@@ -165,18 +165,18 @@ void DirectoriesWorker::Create(const std::wstring& destinationDirectory, const s
 
     std::wstring newDirectory = destinationDirectory + L"\\" + name;
 
-    if (std::filesystem::is_directory(newDirectory))
+    if (fs::is_directory(newDirectory))
         throw std::wstring(L"Directory with same name already exists in destination directory");
 
-    std::filesystem::create_directories(newDirectory);
+    fs::create_directories(newDirectory);
 
-    if (!std::filesystem::is_directory(newDirectory))
+    if (!fs::is_directory(newDirectory))
         throw std::wstring(L"New directory has not been created");
 }
 
 std::vector<std::wstring> DirectoriesWorker::GetAllItems(const std::wstring& directory) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         throw std::wstring(L"Directory does not exist");
 
     std::vector<std::wstring> result = GetDirectories(directory);
@@ -189,7 +189,7 @@ std::vector<std::wstring> DirectoriesWorker::GetAllItems(const std::wstring& dir
 
 std::vector<std::wstring> DirectoriesWorker::GetDirectories(const std::wstring& directory) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         throw std::wstring(L"Directory does not exist");
 
     return GetItems(directory, true);
@@ -197,7 +197,7 @@ std::vector<std::wstring> DirectoriesWorker::GetDirectories(const std::wstring& 
 
 std::vector<std::wstring> DirectoriesWorker::GetFiles(const std::wstring& directory) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         throw std::wstring(L"Directory does not exist");
 
     return GetItems(directory, false);
@@ -205,14 +205,14 @@ std::vector<std::wstring> DirectoriesWorker::GetFiles(const std::wstring& direct
 
 unsigned long long DirectoriesWorker::GetSizeInBytes(const std::wstring& directory) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         throw std::wstring(L"Directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(directory);
+        fs::directory_iterator(directory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory");
     }
@@ -222,26 +222,26 @@ unsigned long long DirectoriesWorker::GetSizeInBytes(const std::wstring& directo
 
 void DirectoriesWorker::Relocate(const std::wstring& directoryToRelocate, const std::wstring& destinationDirectory) const
 {
-    if (!std::filesystem::is_directory(directoryToRelocate))
+    if (!fs::is_directory(directoryToRelocate))
         throw std::wstring(L"Directory to relocate does not exist");
 
     try
     {
-        for (const auto& entry : std::filesystem::recursive_directory_iterator(directoryToRelocate));
+        for (const auto& entry : fs::recursive_directory_iterator(directoryToRelocate));
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory to relocate or contain objects");
     }
 
-    if (!std::filesystem::is_directory(destinationDirectory))
+    if (!fs::is_directory(destinationDirectory))
         throw std::wstring(L"Destination directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(destinationDirectory);
+        fs::directory_iterator(destinationDirectory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to destination directory");
     }
@@ -257,24 +257,24 @@ void DirectoriesWorker::Relocate(const std::wstring& directoryToRelocate, const 
 
 void DirectoriesWorker::Remove(const std::wstring& directory) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         throw std::wstring(L"Directory to remove does not exist");
 
     try
     {
-        for (const auto& entry : std::filesystem::recursive_directory_iterator(directory));
+        for (const auto& entry : fs::recursive_directory_iterator(directory));
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory to remove or contain objects");
     }
 
-    std::filesystem::remove_all(directory);
+    fs::remove_all(directory);
 }
 
 void DirectoriesWorker::Rename(const std::wstring& directoryToRename, const std::wstring& newName) const
 {
-    if (!std::filesystem::is_directory(directoryToRename))
+    if (!fs::is_directory(directoryToRename))
         throw std::wstring(L"Directory to rename does not exist");
 
     if (newName.empty() || spacesChecker->Check(newName))
@@ -284,9 +284,9 @@ void DirectoriesWorker::Rename(const std::wstring& directoryToRename, const std:
 
     try
     {
-        std::filesystem::rename(directoryToRename, newDirectoryPath);
+        fs::rename(directoryToRename, newDirectoryPath);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory to rename");
     }
@@ -297,14 +297,14 @@ std::wstring DirectoriesWorker::SubstringSearch(
     const std::wstring& searchedText,
     const bool isSearchOnlyInCurrent) const
 {
-    if (!std::filesystem::is_directory(directory))
+    if (!fs::is_directory(directory))
         throw std::wstring(L"Directory does not exist");
 
     try
     {
-        std::filesystem::directory_iterator(directory);
+        fs::directory_iterator(directory);
     }
-    catch (const std::filesystem::filesystem_error&)
+    catch (const fs::filesystem_error&)
     {
         throw std::wstring(L"No access to directory");
     }
@@ -316,8 +316,8 @@ std::wstring DirectoriesWorker::SubstringSearch(
     {
         std::wstring result;
         std::wstring objectPath;
-        std::filesystem::directory_iterator itr(directory);
-        std::filesystem::directory_entry entry;
+        fs::directory_iterator itr(directory);
+        fs::directory_entry entry;
 
         for (itr = begin(itr); itr != end(itr); ++itr)
         {
@@ -326,10 +326,10 @@ std::wstring DirectoriesWorker::SubstringSearch(
 
             if (objectPath.find(searchedText) != std::wstring::npos)
             {
-                if (std::filesystem::is_directory(objectPath))
+                if (fs::is_directory(objectPath))
                     result += L"[DIR.]";
 
-                if (std::filesystem::is_regular_file(objectPath))
+                if (fs::is_regular_file(objectPath))
                     result += L"[FILE]";
 
                 result += objectPath + L"\n";

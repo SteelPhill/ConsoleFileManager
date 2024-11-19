@@ -6,6 +6,7 @@
 #include "IFilesWorker.h"
 #include "IStringSpacesChecker.h"
 #include "StringSpacesChecker.h"
+namespace fs = std::filesystem;
 
 class FilesWorker : public IFilesWorker
 {
