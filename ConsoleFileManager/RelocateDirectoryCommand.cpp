@@ -1,5 +1,10 @@
 #include "RelocateDirectoryCommand.h"
 
+RelocateDirectoryCommand::RelocateDirectoryCommand(IMenu* relocateDirectoryMenu)
+{
+	this->relocateDirectoryMenu = relocateDirectoryMenu;
+}
+
 std::wstring RelocateDirectoryCommand::GetDescription() const
 {
 	return L"Relocate directory";
@@ -7,12 +12,5 @@ std::wstring RelocateDirectoryCommand::GetDescription() const
 
 void RelocateDirectoryCommand::Execute() const
 {
-	IMenu* relocateDirectoryMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	relocateDirectoryMenu->AddCommand(new RelocateDirectoryFromCurrentDirectoryCommand());
-	relocateDirectoryMenu->AddCommand(new RelocateEnteredDirectoryCommand());
-
 	relocateDirectoryMenu->Start();
-
-	delete relocateDirectoryMenu;
 }

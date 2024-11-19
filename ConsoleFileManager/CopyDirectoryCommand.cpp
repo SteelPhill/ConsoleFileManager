@@ -1,5 +1,10 @@
 #include "CopyDirectoryCommand.h"
 
+CopyDirectoryCommand::CopyDirectoryCommand(IMenu* copyDirectoryMenu)
+{
+	this->copyDirectoryMenu = copyDirectoryMenu;
+}
+
 std::wstring CopyDirectoryCommand::GetDescription() const
 {
 	return L"Copy directory";
@@ -7,12 +12,5 @@ std::wstring CopyDirectoryCommand::GetDescription() const
 
 void CopyDirectoryCommand::Execute() const
 {
-	IMenu* copyDirectoryMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	copyDirectoryMenu->AddCommand(new CopyDirectoryFromCurrentDirectoryCommand());
-	copyDirectoryMenu->AddCommand(new CopyEnteredDirectoryCommand());
-
 	copyDirectoryMenu->Start();
-
-	delete copyDirectoryMenu;
 }

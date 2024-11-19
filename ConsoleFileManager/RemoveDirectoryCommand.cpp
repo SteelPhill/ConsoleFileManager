@@ -1,5 +1,10 @@
 #include "RemoveDirectoryCommand.h"
 
+RemoveDirectoryCommand::RemoveDirectoryCommand(IMenu* removeDirectoryMenu)
+{
+	this->removeDirectoryMenu = removeDirectoryMenu;
+}
+
 std::wstring RemoveDirectoryCommand::GetDescription() const
 {
 	return L"Remove directory";
@@ -7,12 +12,5 @@ std::wstring RemoveDirectoryCommand::GetDescription() const
 
 void RemoveDirectoryCommand::Execute() const
 {
-	IMenu* deleteDirectoryMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	deleteDirectoryMenu->AddCommand(new RemoveDirectoryFromCurrentDirectoryCommand());
-	deleteDirectoryMenu->AddCommand(new RemoveEnteredDirectoryCommand());
-
-	deleteDirectoryMenu->Start();
-
-	delete deleteDirectoryMenu;
+	removeDirectoryMenu->Start();
 }

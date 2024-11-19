@@ -1,5 +1,10 @@
 #include "ShowDirectoryContentCommand.h"
 
+ShowDirectoryContentCommand::ShowDirectoryContentCommand(IMenu* showDirectoryContentMenu)
+{
+	this->showDirectoryContentMenu = showDirectoryContentMenu;
+}
+
 std::wstring ShowDirectoryContentCommand::GetDescription() const
 {
 	return L"Show directory content";
@@ -7,12 +12,5 @@ std::wstring ShowDirectoryContentCommand::GetDescription() const
 
 void ShowDirectoryContentCommand::Execute() const
 {
-	IMenu* showDirectoryContentMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	showDirectoryContentMenu->AddCommand(new ShowContentsCurrentDirectoryCommand());
-	showDirectoryContentMenu->AddCommand(new ShowContentsEnteredDirectoryCommand());
-
 	showDirectoryContentMenu->Start();
-
-	delete showDirectoryContentMenu;
 }

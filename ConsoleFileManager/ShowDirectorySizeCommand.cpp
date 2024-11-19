@@ -1,5 +1,10 @@
 #include "ShowDirectorySizeCommand.h"
 
+ShowDirectorySizeCommand::ShowDirectorySizeCommand(IMenu* showDirectorySizeMenu)
+{
+	this->showDirectorySizeMenu = showDirectorySizeMenu;
+}
+
 std::wstring ShowDirectorySizeCommand::GetDescription() const
 {
 	return L"Show directory size";
@@ -7,13 +12,5 @@ std::wstring ShowDirectorySizeCommand::GetDescription() const
 
 void ShowDirectorySizeCommand::Execute() const
 {
-	IMenu* showDirectorySizeMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	showDirectorySizeMenu->AddCommand(new ShowCurrentDirectorySizeCommand());
-	showDirectorySizeMenu->AddCommand(new ShowSelectedDirectorySizeCommand());
-	showDirectorySizeMenu->AddCommand(new ShowEnteredDirectorySizeCommand());
-
 	showDirectorySizeMenu->Start();
-
-	delete showDirectorySizeMenu;
 }

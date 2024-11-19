@@ -1,5 +1,10 @@
 #include "ShowFileSizeCommand.h"
 
+ShowFileSizeCommand::ShowFileSizeCommand(IMenu* showFileSizeMenu)
+{
+	this->showFileSizeMenu = showFileSizeMenu;
+}
+
 std::wstring ShowFileSizeCommand::GetDescription() const
 {
 	return L"Show file size";
@@ -7,12 +12,5 @@ std::wstring ShowFileSizeCommand::GetDescription() const
 
 void ShowFileSizeCommand::Execute() const
 {
-	IMenu* showFileSizeMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	showFileSizeMenu->AddCommand(new ShowSelectedFileSizeCommand());
-	showFileSizeMenu->AddCommand(new ShowEnteredFileSizeCommand());
-
 	showFileSizeMenu->Start();
-
-	delete showFileSizeMenu;
 }

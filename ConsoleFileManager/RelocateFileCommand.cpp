@@ -1,5 +1,10 @@
 #include "RelocateFileCommand.h"
 
+RelocateFileCommand::RelocateFileCommand(IMenu* relocateFileMenu)
+{
+	this->relocateFileMenu = relocateFileMenu;
+}
+
 std::wstring RelocateFileCommand::GetDescription() const
 {
 	return L"Relocate file";
@@ -7,12 +12,5 @@ std::wstring RelocateFileCommand::GetDescription() const
 
 void RelocateFileCommand::Execute() const
 {
-	IMenu* relocateFileMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	relocateFileMenu->AddCommand(new RelocateFileFromCurrentDirectoryCommand());
-	relocateFileMenu->AddCommand(new RelocateEnteredFileCommand());
-
 	relocateFileMenu->Start();
-
-	delete relocateFileMenu;
 }

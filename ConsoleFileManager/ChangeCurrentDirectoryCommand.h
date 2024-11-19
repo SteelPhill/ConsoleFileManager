@@ -1,15 +1,16 @@
 #pragma once
 
 #include <iostream>
+#include "IMenu.h"
 #include "IMenuCommand.h"
-#include "ChangeCurrentDirectoryToEnteredCommand.h"
-#include "ChangeCurrentDirectoryToPreviousCommand.h"
-#include "ChangeCurrentDirectoryToSelectedCommand.h"
-#include "ConsoleMenu.h"
 
 class ChangeCurrentDirectoryCommand : public IMenuCommand
 {
+	IMenu* changeCurrentDirectoryMenu;
+
 public:
+	ChangeCurrentDirectoryCommand(IMenu* changeCurrentDirectoryMenu);
+
 	std::wstring GetDescription() const override;
 	void Execute() const override;
 };

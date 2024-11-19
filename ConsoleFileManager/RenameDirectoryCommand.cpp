@@ -1,5 +1,10 @@
 #include "RenameDirectoryCommand.h"
 
+RenameDirectoryCommand::RenameDirectoryCommand(IMenu* renameDirectoryMenu)
+{
+	this->renameDirectoryMenu = renameDirectoryMenu;
+}
+
 std::wstring RenameDirectoryCommand::GetDescription() const
 {
 	return L"Rename directory";
@@ -7,12 +12,5 @@ std::wstring RenameDirectoryCommand::GetDescription() const
 
 void RenameDirectoryCommand::Execute() const
 {
-	IMenu* renameDirectoryMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	renameDirectoryMenu->AddCommand(new RenameDirectoryFromCurrentDirectoryCommand());
-	renameDirectoryMenu->AddCommand(new RenameEnteredDirectoryCommand());
-
 	renameDirectoryMenu->Start();
-
-	delete renameDirectoryMenu;
 }

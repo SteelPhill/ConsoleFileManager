@@ -1,5 +1,10 @@
 #include "RenameFileCommand.h"
 
+RenameFileCommand::RenameFileCommand(IMenu* renameFileMenu)
+{
+	this->renameFileMenu = renameFileMenu;
+}
+
 std::wstring RenameFileCommand::GetDescription() const
 {
 	return L"Rename file";
@@ -7,12 +12,5 @@ std::wstring RenameFileCommand::GetDescription() const
 
 void RenameFileCommand::Execute() const
 {
-	IMenu* renameFileMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	renameFileMenu->AddCommand(new RenameFileFromCurrentDirectoryCommand());
-	renameFileMenu->AddCommand(new RenameEnteredFileCommand());
-
 	renameFileMenu->Start();
-
-	delete renameFileMenu;
 }

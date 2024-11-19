@@ -1,18 +1,16 @@
 #pragma once
 
 #include <iostream>
+#include "IMenu.h"
 #include "IMenuCommand.h"
-#include "ConsoleMenu.h"
-#include "CopyDirectoryCommand.h"
-#include "CreateDirectoryCommand.h"
-#include "RelocateDirectoryCommand.h"
-#include "RemoveDirectoryCommand.h"
-#include "RenameDirectoryCommand.h"
-#include "ShowDirectorySizeCommand.h"
 
 class WorkingWithDirectoriesCommand : public IMenuCommand
 {
+	IMenu* workingWithDirectoriesMenu;
+
 public:
+	WorkingWithDirectoriesCommand(IMenu* workingWithDirectoriesMenu);
+
 	std::wstring GetDescription() const override;
 	void Execute() const override;
 };

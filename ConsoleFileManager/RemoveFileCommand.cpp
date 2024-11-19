@@ -1,5 +1,10 @@
 #include "RemoveFileCommand.h"
 
+RemoveFileCommand::RemoveFileCommand(IMenu* removeFileMenu)
+{
+	this->removeFileMenu = removeFileMenu;
+}
+
 std::wstring RemoveFileCommand::GetDescription() const
 {
 	return L"Remove file";
@@ -7,12 +12,5 @@ std::wstring RemoveFileCommand::GetDescription() const
 
 void RemoveFileCommand::Execute() const
 {
-	IMenu* deleteFileMenu = new ConsoleMenu(GetDescription() + L" options:");
-
-	deleteFileMenu->AddCommand(new RemoveFileFromCurrentDirectoryCommand());
-	deleteFileMenu->AddCommand(new RemoveEnteredFileCommand());
-
-	deleteFileMenu->Start();
-
-	delete deleteFileMenu;
+	removeFileMenu->Start();
 }
