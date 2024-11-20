@@ -4,54 +4,38 @@
 #include <fcntl.h>
 #include "IMenu.h"
 #include "ConsoleMenu.h"
+#include "SubmenuExecuterCommand.h"
 #include "CurrentDirectory.h"
-#include "ChangeCurrentDirectoryCommand.h"
+#include "ShowContentsCurrentDirectoryCommand.h"
+#include "ShowContentsEnteredDirectoryCommand.h"
 #include "ChangeCurrentDirectoryToEnteredCommand.h"
 #include "ChangeCurrentDirectoryToPreviousCommand.h"
 #include "ChangeCurrentDirectoryToSelectedCommand.h"
-#include "ShowDirectoryContentCommand.h"
 #include "ShowCurrentDirectorySizeCommand.h"
 #include "ShowEnteredDirectorySizeCommand.h"
 #include "ShowSelectedDirectorySizeCommand.h"
-#include "WorkingWithDirectoriesCommand.h"
-#include "ShowDirectorySizeCommand.h"
-#include "ShowContentsCurrentDirectoryCommand.h"
-#include "ShowContentsEnteredDirectoryCommand.h"
-#include "CreateDirectoryCommand.h"
 #include "CreateDirectoryInCurrentDirectoryCommand.h"
 #include "CreateDirectoryInEnteredDirectoryCommand.h"
-#include "CopyDirectoryCommand.h"
 #include "CopyDirectoryFromCurrentDirectoryCommand.h"
 #include "CopyEnteredDirectoryCommand.h"
-#include "RelocateDirectoryCommand.h"
 #include "RelocateDirectoryFromCurrentDirectoryCommand.h"
 #include "RelocateEnteredDirectoryCommand.h"
-#include "RenameDirectoryCommand.h"
 #include "RenameDirectoryFromCurrentDirectoryCommand.h"
 #include "RenameEnteredDirectoryCommand.h"
-#include "RemoveDirectoryCommand.h"
 #include "RemoveDirectoryFromCurrentDirectoryCommand.h"
 #include "RemoveEnteredDirectoryCommand.h"
-#include "WorkingWithFilesCommand.h"
-#include "ShowFileSizeCommand.h"
 #include "ShowEnteredFileSizeCommand.h"
 #include "ShowSelectedFileSizeCommand.h"
-#include "CreateFileCommand.h"
 #include "CreateFileInCurrentDirectoryCommand.h"
 #include "CreateFileInEnteredDirectoryCommand.h"
-#include "CopyFileCommand.h"
 #include "CopyEnteredFileCommand.h"
 #include "CopyFileFromCurrentDirectoryCommand.h"
-#include "RelocateFileCommand.h"
 #include "RelocateEnteredFileCommand.h"
 #include "RelocateFileFromCurrentDirectoryCommand.h"
-#include "RenameFileCommand.h"
 #include "RenameEnteredFileCommand.h"
 #include "RenameFileFromCurrentDirectoryCommand.h"
-#include "RemoveFileCommand.h"
 #include "RemoveEnteredFileCommand.h"
 #include "RemoveFileFromCurrentDirectoryCommand.h"
-#include "SearchSubstringCommand.h"
 #include "SubstringInCurrentAndNestedDirectoriesCommand.h"
 #include "SubstringInEnteredAndNestedDirectoriesCommand.h"
 #include "SubstringInOnlyCurrentDirectoryCommand.h"
@@ -63,112 +47,112 @@ static void CreateMenuAndStartFileManager()
 {
 	CurrentDirectory::Path = current_path().wstring();
 
-	IMenu* showDirectoryContentMenu = new ConsoleMenu(L"Show directory content options:");
-	showDirectoryContentMenu->AddCommand(new ShowContentsCurrentDirectoryCommand());
-	showDirectoryContentMenu->AddCommand(new ShowContentsEnteredDirectoryCommand());
+	IMenu* showDirectoryContentSubmenu = new ConsoleMenu(L"Show directory content options:");
+	showDirectoryContentSubmenu->AddCommand(new ShowContentsCurrentDirectoryCommand());
+	showDirectoryContentSubmenu->AddCommand(new ShowContentsEnteredDirectoryCommand());
 
-	IMenu* changeCurrentDirectoryMenu = new ConsoleMenu(L"Change current directory options");
-	changeCurrentDirectoryMenu->AddCommand(new ChangeCurrentDirectoryToPreviousCommand());
-	changeCurrentDirectoryMenu->AddCommand(new ChangeCurrentDirectoryToSelectedCommand());
-	changeCurrentDirectoryMenu->AddCommand(new ChangeCurrentDirectoryToEnteredCommand());
+	IMenu* changeCurrentDirectorySubmenu = new ConsoleMenu(L"Change current directory options");
+	changeCurrentDirectorySubmenu->AddCommand(new ChangeCurrentDirectoryToPreviousCommand());
+	changeCurrentDirectorySubmenu->AddCommand(new ChangeCurrentDirectoryToSelectedCommand());
+	changeCurrentDirectorySubmenu->AddCommand(new ChangeCurrentDirectoryToEnteredCommand());
 
-	IMenu* showDirectorySizeMenu = new ConsoleMenu(L"Show directory size options:");
-	showDirectorySizeMenu->AddCommand(new ShowCurrentDirectorySizeCommand());
-	showDirectorySizeMenu->AddCommand(new ShowSelectedDirectorySizeCommand());
-	showDirectorySizeMenu->AddCommand(new ShowEnteredDirectorySizeCommand());
+	IMenu* showDirectorySizeSubmenu = new ConsoleMenu(L"Show directory size options:");
+	showDirectorySizeSubmenu->AddCommand(new ShowCurrentDirectorySizeCommand());
+	showDirectorySizeSubmenu->AddCommand(new ShowSelectedDirectorySizeCommand());
+	showDirectorySizeSubmenu->AddCommand(new ShowEnteredDirectorySizeCommand());
 
-	IMenu* createDirectoryMenu = new ConsoleMenu(L"Create directory options:");
-	createDirectoryMenu->AddCommand(new CreateDirectoryInCurrentDirectoryCommand());
-	createDirectoryMenu->AddCommand(new CreateDirectoryInEnteredDirectoryCommand());
+	IMenu* createDirectorySubmenu = new ConsoleMenu(L"Create directory options:");
+	createDirectorySubmenu->AddCommand(new CreateDirectoryInCurrentDirectoryCommand());
+	createDirectorySubmenu->AddCommand(new CreateDirectoryInEnteredDirectoryCommand());
 
-	IMenu* copyDirectoryMenu = new ConsoleMenu(L"Copy directory options:");
-	copyDirectoryMenu->AddCommand(new CopyDirectoryFromCurrentDirectoryCommand());
-	copyDirectoryMenu->AddCommand(new CopyEnteredDirectoryCommand());
+	IMenu* copyDirectorySubmenu = new ConsoleMenu(L"Copy directory options:");
+	copyDirectorySubmenu->AddCommand(new CopyDirectoryFromCurrentDirectoryCommand());
+	copyDirectorySubmenu->AddCommand(new CopyEnteredDirectoryCommand());
 
-	IMenu* relocateDirectoryMenu = new ConsoleMenu(L"Relocate directory options:");
-	relocateDirectoryMenu->AddCommand(new RelocateDirectoryFromCurrentDirectoryCommand());
-	relocateDirectoryMenu->AddCommand(new RelocateEnteredDirectoryCommand());
+	IMenu* relocateDirectorySubmenu = new ConsoleMenu(L"Relocate directory options:");
+	relocateDirectorySubmenu->AddCommand(new RelocateDirectoryFromCurrentDirectoryCommand());
+	relocateDirectorySubmenu->AddCommand(new RelocateEnteredDirectoryCommand());
 
-	IMenu* renameDirectoryMenu = new ConsoleMenu(L"Rename directory options:");
-	renameDirectoryMenu->AddCommand(new RenameDirectoryFromCurrentDirectoryCommand());
-	renameDirectoryMenu->AddCommand(new RenameEnteredDirectoryCommand());
+	IMenu* renameDirectorySubmenu = new ConsoleMenu(L"Rename directory options:");
+	renameDirectorySubmenu->AddCommand(new RenameDirectoryFromCurrentDirectoryCommand());
+	renameDirectorySubmenu->AddCommand(new RenameEnteredDirectoryCommand());
 
-	IMenu* removeDirectoryMenu = new ConsoleMenu(L"Remove directory options:");
-	removeDirectoryMenu->AddCommand(new RemoveDirectoryFromCurrentDirectoryCommand());
-	removeDirectoryMenu->AddCommand(new RemoveEnteredDirectoryCommand());
+	IMenu* removeDirectorySubmenu = new ConsoleMenu(L"Remove directory options:");
+	removeDirectorySubmenu->AddCommand(new RemoveDirectoryFromCurrentDirectoryCommand());
+	removeDirectorySubmenu->AddCommand(new RemoveEnteredDirectoryCommand());
 
-	IMenu* workingWithDirectoriesMenu = new ConsoleMenu(L"Working with directories options:");
-	workingWithDirectoriesMenu->AddCommand(new ShowDirectorySizeCommand(showDirectorySizeMenu));
-	workingWithDirectoriesMenu->AddCommand(new CreateDirectoryCommand(createDirectoryMenu));
-	workingWithDirectoriesMenu->AddCommand(new CopyDirectoryCommand(copyDirectoryMenu));
-	workingWithDirectoriesMenu->AddCommand(new RelocateDirectoryCommand(relocateDirectoryMenu));
-	workingWithDirectoriesMenu->AddCommand(new RenameDirectoryCommand(renameDirectoryMenu));
-	workingWithDirectoriesMenu->AddCommand(new RemoveDirectoryCommand(removeDirectoryMenu));
+	IMenu* workingWithDirectoriesSubmenu = new ConsoleMenu(L"Working with directories options:");
+	workingWithDirectoriesSubmenu->AddCommand(new SubmenuExecuterCommand(showDirectorySizeSubmenu, L"Show directory size"));
+	workingWithDirectoriesSubmenu->AddCommand(new SubmenuExecuterCommand(createDirectorySubmenu, L"Create directory"));
+	workingWithDirectoriesSubmenu->AddCommand(new SubmenuExecuterCommand(copyDirectorySubmenu, L"Copy directory"));
+	workingWithDirectoriesSubmenu->AddCommand(new SubmenuExecuterCommand(relocateDirectorySubmenu, L"Relocate directory"));
+	workingWithDirectoriesSubmenu->AddCommand(new SubmenuExecuterCommand(renameDirectorySubmenu, L"Rename directory"));
+	workingWithDirectoriesSubmenu->AddCommand(new SubmenuExecuterCommand(removeDirectorySubmenu, L"Remove directory"));
 
-	IMenu* showFileSizeMenu = new ConsoleMenu(L"Show file size options:");
-	showFileSizeMenu->AddCommand(new ShowSelectedFileSizeCommand());
-	showFileSizeMenu->AddCommand(new ShowEnteredFileSizeCommand());
+	IMenu* showFileSizeSubmenu = new ConsoleMenu(L"Show file size options:");
+	showFileSizeSubmenu->AddCommand(new ShowSelectedFileSizeCommand());
+	showFileSizeSubmenu->AddCommand(new ShowEnteredFileSizeCommand());
 
-	IMenu* createFileMenu = new ConsoleMenu(L"Create file options:");
-	createFileMenu->AddCommand(new CreateFileInCurrentDirectoryCommand());
-	createFileMenu->AddCommand(new CreateFileInEnteredDirectoryCommand());
+	IMenu* createFileSubmenu = new ConsoleMenu(L"Create file options:");
+	createFileSubmenu->AddCommand(new CreateFileInCurrentDirectoryCommand());
+	createFileSubmenu->AddCommand(new CreateFileInEnteredDirectoryCommand());
 
-	IMenu* copyFileMenu = new ConsoleMenu(L"Copy file options:");
-	copyFileMenu->AddCommand(new CopyFileFromCurrentDirectoryCommand());
-	copyFileMenu->AddCommand(new CopyEnteredFileCommand());
+	IMenu* copyFileSubmenu = new ConsoleMenu(L"Copy file options:");
+	copyFileSubmenu->AddCommand(new CopyFileFromCurrentDirectoryCommand());
+	copyFileSubmenu->AddCommand(new CopyEnteredFileCommand());
 
-	IMenu* relocateFileMenu = new ConsoleMenu(L"Relocate file options:");
-	relocateFileMenu->AddCommand(new RelocateFileFromCurrentDirectoryCommand());
-	relocateFileMenu->AddCommand(new RelocateEnteredFileCommand());
+	IMenu* relocateFileSubmenu = new ConsoleMenu(L"Relocate file options:");
+	relocateFileSubmenu->AddCommand(new RelocateFileFromCurrentDirectoryCommand());
+	relocateFileSubmenu->AddCommand(new RelocateEnteredFileCommand());
 
-	IMenu* renameFileMenu = new ConsoleMenu(L"Rename file options:");
-	renameFileMenu->AddCommand(new RenameFileFromCurrentDirectoryCommand());
-	renameFileMenu->AddCommand(new RenameEnteredFileCommand());
+	IMenu* renameFileSubmenu = new ConsoleMenu(L"Rename file options:");
+	renameFileSubmenu->AddCommand(new RenameFileFromCurrentDirectoryCommand());
+	renameFileSubmenu->AddCommand(new RenameEnteredFileCommand());
 
-	IMenu* removeFileMenu = new ConsoleMenu(L"Remove file options:");
-	removeFileMenu->AddCommand(new RemoveFileFromCurrentDirectoryCommand());
-	removeFileMenu->AddCommand(new RemoveEnteredFileCommand());
+	IMenu* removeFileSubmenu = new ConsoleMenu(L"Remove file options:");
+	removeFileSubmenu->AddCommand(new RemoveFileFromCurrentDirectoryCommand());
+	removeFileSubmenu->AddCommand(new RemoveEnteredFileCommand());
 
-	IMenu* workingWithFilesMenu = new ConsoleMenu(L"Working with files options:");
-	workingWithFilesMenu->AddCommand(new ShowFileSizeCommand(showFileSizeMenu));
-	workingWithFilesMenu->AddCommand(new CreateFileCommand(createFileMenu));
-	workingWithFilesMenu->AddCommand(new CopyFileCommand(copyFileMenu));
-	workingWithFilesMenu->AddCommand(new RelocateFileCommand(relocateFileMenu));
-	workingWithFilesMenu->AddCommand(new RenameFileCommand(renameFileMenu));
-	workingWithFilesMenu->AddCommand(new RemoveFileCommand(removeFileMenu));
+	IMenu* workingWithFilesSubmenu = new ConsoleMenu(L"Working with files options:");
+	workingWithFilesSubmenu->AddCommand(new SubmenuExecuterCommand(showFileSizeSubmenu, L"Show file size"));
+	workingWithFilesSubmenu->AddCommand(new SubmenuExecuterCommand(createFileSubmenu, L"Create file"));
+	workingWithFilesSubmenu->AddCommand(new SubmenuExecuterCommand(copyFileSubmenu, L"Copy file"));
+	workingWithFilesSubmenu->AddCommand(new SubmenuExecuterCommand(relocateFileSubmenu, L"Relocate file"));
+	workingWithFilesSubmenu->AddCommand(new SubmenuExecuterCommand(renameFileSubmenu, L"Rename file"));
+	workingWithFilesSubmenu->AddCommand(new SubmenuExecuterCommand(removeFileSubmenu, L"Remove file"));
 
-	IMenu* searchSubstringMenu = new ConsoleMenu(L"Search substring options:");
-	searchSubstringMenu->AddCommand(new SubstringInOnlyCurrentDirectoryCommand());
-	searchSubstringMenu->AddCommand(new SubstringInCurrentAndNestedDirectoriesCommand());
-	searchSubstringMenu->AddCommand(new SubstringInOnlyEnteredDirectoryCommand());
-	searchSubstringMenu->AddCommand(new SubstringInEnteredAndNestedDirectoriesCommand());
+	IMenu* searchSubstringSubmenu = new ConsoleMenu(L"Search substring options:");
+	searchSubstringSubmenu->AddCommand(new SubstringInOnlyCurrentDirectoryCommand());
+	searchSubstringSubmenu->AddCommand(new SubstringInCurrentAndNestedDirectoriesCommand());
+	searchSubstringSubmenu->AddCommand(new SubstringInOnlyEnteredDirectoryCommand());
+	searchSubstringSubmenu->AddCommand(new SubstringInEnteredAndNestedDirectoriesCommand());
 
 	IMenu* mainMenu = new ConsoleMenu(L"File manager main menu:");
-	mainMenu->AddCommand(new ShowDirectoryContentCommand(showDirectoryContentMenu));
-	mainMenu->AddCommand(new ChangeCurrentDirectoryCommand(changeCurrentDirectoryMenu));
-	mainMenu->AddCommand(new WorkingWithDirectoriesCommand(workingWithDirectoriesMenu));
-	mainMenu->AddCommand(new WorkingWithFilesCommand(workingWithFilesMenu));
-	mainMenu->AddCommand(new SearchSubstringCommand(searchSubstringMenu));
+	mainMenu->AddCommand(new SubmenuExecuterCommand(showDirectoryContentSubmenu, L"Show directory content"));
+	mainMenu->AddCommand(new SubmenuExecuterCommand(changeCurrentDirectorySubmenu, L"Change current directory"));
+	mainMenu->AddCommand(new SubmenuExecuterCommand(workingWithDirectoriesSubmenu, L"Working with directories"));
+	mainMenu->AddCommand(new SubmenuExecuterCommand(workingWithFilesSubmenu, L"Working with files"));
+	mainMenu->AddCommand(new SubmenuExecuterCommand(searchSubstringSubmenu, L"Search substring"));
 
 	mainMenu->Start();
 
-	delete showDirectoryContentMenu;
-	delete changeCurrentDirectoryMenu;
-	delete showDirectorySizeMenu;
-	delete createDirectoryMenu;
-	delete copyDirectoryMenu;
-	delete relocateDirectoryMenu;
-	delete renameDirectoryMenu;
-	delete removeDirectoryMenu;
-	delete workingWithDirectoriesMenu;
-	delete showFileSizeMenu;
-	delete createFileMenu;
-	delete copyFileMenu;
-	delete relocateFileMenu;
-	delete renameFileMenu;
-	delete removeFileMenu;
-	delete workingWithFilesMenu;
-	delete searchSubstringMenu;
+	delete showDirectoryContentSubmenu;
+	delete changeCurrentDirectorySubmenu;
+	delete showDirectorySizeSubmenu;
+	delete createDirectorySubmenu;
+	delete copyDirectorySubmenu;
+	delete relocateDirectorySubmenu;
+	delete renameDirectorySubmenu;
+	delete removeDirectorySubmenu;
+	delete workingWithDirectoriesSubmenu;
+	delete showFileSizeSubmenu;
+	delete createFileSubmenu;
+	delete copyFileSubmenu;
+	delete relocateFileSubmenu;
+	delete renameFileSubmenu;
+	delete removeFileSubmenu;
+	delete workingWithFilesSubmenu;
+	delete searchSubstringSubmenu;
 	delete mainMenu;
 }
 
