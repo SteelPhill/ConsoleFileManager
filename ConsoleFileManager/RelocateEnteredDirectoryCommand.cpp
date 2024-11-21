@@ -1,7 +1,8 @@
 #include "RelocateEnteredDirectoryCommand.h"
 
-RelocateEnteredDirectoryCommand::RelocateEnteredDirectoryCommand()
+RelocateEnteredDirectoryCommand::RelocateEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ RelocateEnteredDirectoryCommand::~RelocateEnteredDirectoryCommand()
 
 std::wstring RelocateEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Relocate entered directory";
+	return description;
 }
 
 void RelocateEnteredDirectoryCommand::Execute() const

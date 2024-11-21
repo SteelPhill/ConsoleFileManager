@@ -1,7 +1,8 @@
 #include "RemoveEnteredFileCommand.h"
 
-RemoveEnteredFileCommand::RemoveEnteredFileCommand()
+RemoveEnteredFileCommand::RemoveEnteredFileCommand(std::wstring description)
 {
+	this->description = description;
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ RemoveEnteredFileCommand::~RemoveEnteredFileCommand()
 
 std::wstring RemoveEnteredFileCommand::GetDescription() const
 {
-	return L"Remove entered file";
+	return description;
 }
 
 void RemoveEnteredFileCommand::Execute() const

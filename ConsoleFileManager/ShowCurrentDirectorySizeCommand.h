@@ -11,11 +11,12 @@
 
 class ShowCurrentDirectorySizeCommand : public IMenuCommand
 {
+	std::wstring description;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
 
 public:
-	ShowCurrentDirectorySizeCommand();
+	ShowCurrentDirectorySizeCommand(std::wstring description);
 	~ShowCurrentDirectorySizeCommand();
 
 	std::wstring GetDescription() const override;

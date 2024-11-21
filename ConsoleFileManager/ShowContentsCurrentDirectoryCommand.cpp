@@ -1,7 +1,8 @@
 #include "ShowContentsCurrentDirectoryCommand.h"
 
-ShowContentsCurrentDirectoryCommand::ShowContentsCurrentDirectoryCommand()
+ShowContentsCurrentDirectoryCommand::ShowContentsCurrentDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	contentWriter = new DirectoryContentConsoleWriter();
 }
 
@@ -12,7 +13,7 @@ ShowContentsCurrentDirectoryCommand::~ShowContentsCurrentDirectoryCommand()
 
 std::wstring ShowContentsCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Show contents of current directory";
+	return description;
 }
 
 void ShowContentsCurrentDirectoryCommand::Execute() const

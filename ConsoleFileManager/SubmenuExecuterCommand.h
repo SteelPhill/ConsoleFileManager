@@ -6,11 +6,11 @@
 
 class SubmenuExecuterCommand : public IMenuCommand
 {
-	IMenu* submenu;
 	std::wstring description;
+	IMenu* submenu;
 
 public:
-	SubmenuExecuterCommand(IMenu* submenu, std::wstring description);
+	SubmenuExecuterCommand(std::wstring description, IMenu* submenu);
 
 	std::wstring GetDescription() const;
 	void Execute() const;

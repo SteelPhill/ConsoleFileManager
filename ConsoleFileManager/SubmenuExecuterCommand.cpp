@@ -1,9 +1,9 @@
 #include "SubmenuExecuterCommand.h"
 
-SubmenuExecuterCommand::SubmenuExecuterCommand(IMenu* submenu, std::wstring description)
+SubmenuExecuterCommand::SubmenuExecuterCommand(std::wstring description, IMenu* submenu)
 {
-	this->submenu = submenu;
 	this->description = description;
+	this->submenu = submenu;
 }
 
 std::wstring SubmenuExecuterCommand::GetDescription() const

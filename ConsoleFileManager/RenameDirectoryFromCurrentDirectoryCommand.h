@@ -17,6 +17,7 @@
 
 class RenameDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
@@ -25,7 +26,7 @@ class RenameDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	RenameDirectoryFromCurrentDirectoryCommand();
+	RenameDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title);
 	~RenameDirectoryFromCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

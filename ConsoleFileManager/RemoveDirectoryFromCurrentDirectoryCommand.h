@@ -11,12 +11,13 @@
 
 class RemoveDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IDirectoriesWorker* directoriesWorker;
 	IMenuSelector* menuSelector;
 
 public:
-	RemoveDirectoryFromCurrentDirectoryCommand();
+	RemoveDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title);
 	~RemoveDirectoryFromCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

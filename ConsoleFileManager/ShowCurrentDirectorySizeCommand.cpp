@@ -1,7 +1,8 @@
 #include "ShowCurrentDirectorySizeCommand.h"
 
-ShowCurrentDirectorySizeCommand::ShowCurrentDirectorySizeCommand()
+ShowCurrentDirectorySizeCommand::ShowCurrentDirectorySizeCommand(std::wstring description)
 {
+	this->description = description;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 }
@@ -14,7 +15,7 @@ ShowCurrentDirectorySizeCommand::~ShowCurrentDirectorySizeCommand()
 
 std::wstring ShowCurrentDirectorySizeCommand::GetDescription() const
 {
-	return L"Show current directory size";
+	return description;
 }
 
 void ShowCurrentDirectorySizeCommand::Execute() const

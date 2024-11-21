@@ -1,8 +1,9 @@
 #include "RelocateDirectoryFromCurrentDirectoryCommand.h"
 
-RelocateDirectoryFromCurrentDirectoryCommand::RelocateDirectoryFromCurrentDirectoryCommand()
+RelocateDirectoryFromCurrentDirectoryCommand::RelocateDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect directory to be relocated:";
+	this->description = description;
+	this->title = title;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	menuSelector = new ConsoleMenuSelector();
@@ -21,7 +22,7 @@ RelocateDirectoryFromCurrentDirectoryCommand::~RelocateDirectoryFromCurrentDirec
 
 std::wstring RelocateDirectoryFromCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Relocate directory from current directory";
+	return description;
 }
 
 void RelocateDirectoryFromCurrentDirectoryCommand::Execute() const

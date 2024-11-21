@@ -1,7 +1,8 @@
 #include "RelocateEnteredFileCommand.h"
 
-RelocateEnteredFileCommand::RelocateEnteredFileCommand()
+RelocateEnteredFileCommand::RelocateEnteredFileCommand(std::wstring description)
 {
+	this->description = description;
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ RelocateEnteredFileCommand::~RelocateEnteredFileCommand()
 
 std::wstring RelocateEnteredFileCommand::GetDescription() const
 {
-	return L"Relocate entered file";
+	return description;
 }
 
 void RelocateEnteredFileCommand::Execute() const

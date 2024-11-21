@@ -14,13 +14,14 @@
 
 class ShowEnteredDirectorySizeCommand : public IMenuCommand
 {
+	std::wstring description;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	ShowEnteredDirectorySizeCommand();
+	ShowEnteredDirectorySizeCommand(std::wstring description);
 	~ShowEnteredDirectorySizeCommand();
 
 	std::wstring GetDescription() const override;

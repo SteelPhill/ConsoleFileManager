@@ -1,7 +1,8 @@
 #include "ShowEnteredFileSizeCommand.h"
 
-ShowEnteredFileSizeCommand::ShowEnteredFileSizeCommand()
+ShowEnteredFileSizeCommand::ShowEnteredFileSizeCommand(std::wstring description)
 {
+	this->description = description;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
@@ -18,7 +19,7 @@ ShowEnteredFileSizeCommand::~ShowEnteredFileSizeCommand()
 
 std::wstring ShowEnteredFileSizeCommand::GetDescription() const
 {
-	return L"Show entered file size";
+	return description;
 }
 
 void ShowEnteredFileSizeCommand::Execute() const

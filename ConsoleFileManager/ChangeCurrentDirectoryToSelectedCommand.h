@@ -11,12 +11,13 @@
 
 class ChangeCurrentDirectoryToSelectedCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IDirectoriesWorker* directoriesWorker;
 	IMenuSelector* menuSelector;
 
 public:
-	ChangeCurrentDirectoryToSelectedCommand();
+	ChangeCurrentDirectoryToSelectedCommand(std::wstring description, std::wstring title);
 	~ChangeCurrentDirectoryToSelectedCommand();
 
 	std::wstring GetDescription() const override;

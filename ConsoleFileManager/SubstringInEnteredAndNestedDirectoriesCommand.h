@@ -14,13 +14,14 @@
 
 class SubstringInEnteredAndNestedDirectoriesCommand : public IMenuCommand
 {
+	std::wstring description;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	SubstringInEnteredAndNestedDirectoriesCommand();
+	SubstringInEnteredAndNestedDirectoriesCommand(std::wstring description);
 	~SubstringInEnteredAndNestedDirectoriesCommand();
 
 	std::wstring GetDescription() const override;

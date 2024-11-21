@@ -11,12 +11,13 @@
 
 class CreateFileInEnteredDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IFilesWorker* filesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	CreateFileInEnteredDirectoryCommand();
+	CreateFileInEnteredDirectoryCommand(std::wstring description);
 	~CreateFileInEnteredDirectoryCommand();
 
 	std::wstring GetDescription() const override;

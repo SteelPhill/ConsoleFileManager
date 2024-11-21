@@ -14,13 +14,14 @@
 
 class ShowEnteredFileSizeCommand : public IMenuCommand
 {
+	std::wstring description;
 	IColoredTextWriter* coloredTextWriter;
 	IFilesWorker* filesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spaceChecker;
 
 public:
-	ShowEnteredFileSizeCommand();
+	ShowEnteredFileSizeCommand(std::wstring description);
 	~ShowEnteredFileSizeCommand();
 
 	std::wstring GetDescription() const override;

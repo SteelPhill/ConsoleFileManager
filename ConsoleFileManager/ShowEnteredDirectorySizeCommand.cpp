@@ -1,7 +1,8 @@
 #include "ShowEnteredDirectorySizeCommand.h"
 
-ShowEnteredDirectorySizeCommand::ShowEnteredDirectorySizeCommand()
+ShowEnteredDirectorySizeCommand::ShowEnteredDirectorySizeCommand(std::wstring description)
 {
+	this->description = description;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
@@ -18,7 +19,7 @@ ShowEnteredDirectorySizeCommand::~ShowEnteredDirectorySizeCommand()
 
 std::wstring ShowEnteredDirectorySizeCommand::GetDescription() const
 {
-	return L"Show entered directory size";
+	return description;
 }
 
 void ShowEnteredDirectorySizeCommand::Execute() const

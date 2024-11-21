@@ -1,7 +1,8 @@
 #include "SubstringInOnlyCurrentDirectoryCommand.h"
 
-SubstringInOnlyCurrentDirectoryCommand::SubstringInOnlyCurrentDirectoryCommand()
+SubstringInOnlyCurrentDirectoryCommand::SubstringInOnlyCurrentDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
@@ -18,7 +19,7 @@ SubstringInOnlyCurrentDirectoryCommand::~SubstringInOnlyCurrentDirectoryCommand(
 
 std::wstring SubstringInOnlyCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Search in only current directory";
+	return description;
 }
 
 void SubstringInOnlyCurrentDirectoryCommand::Execute() const

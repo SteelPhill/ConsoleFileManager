@@ -13,13 +13,14 @@
 
 class ShowSelectedDirectorySizeCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
 	IMenuSelector* menuSelector;
 
 public:
-	ShowSelectedDirectorySizeCommand();
+	ShowSelectedDirectorySizeCommand(std::wstring description, std::wstring title);
 	~ShowSelectedDirectorySizeCommand();
 
 	std::wstring GetDescription() const override;

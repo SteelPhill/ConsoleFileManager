@@ -1,8 +1,9 @@
 #include "CopyDirectoryFromCurrentDirectoryCommand.h"
 
-CopyDirectoryFromCurrentDirectoryCommand::CopyDirectoryFromCurrentDirectoryCommand()
+CopyDirectoryFromCurrentDirectoryCommand::CopyDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect directory path to be copied:";
+	this->description = description;
+	this->title = title;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	menuSelector = new ConsoleMenuSelector();
@@ -21,7 +22,7 @@ CopyDirectoryFromCurrentDirectoryCommand::~CopyDirectoryFromCurrentDirectoryComm
 
 std::wstring CopyDirectoryFromCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Copy directory from current directory";
+	return description;
 }
 
 void CopyDirectoryFromCurrentDirectoryCommand::Execute() const

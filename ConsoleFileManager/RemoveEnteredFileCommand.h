@@ -11,12 +11,13 @@
 
 class RemoveEnteredFileCommand : public IMenuCommand
 {
+	std::wstring description;
 	IFilesWorker* filesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	RemoveEnteredFileCommand();
+	RemoveEnteredFileCommand(std::wstring description);
 	~RemoveEnteredFileCommand();
 
 	std::wstring GetDescription() const override;

@@ -1,7 +1,8 @@
 #include "CreateFileInEnteredDirectoryCommand.h"
 
-CreateFileInEnteredDirectoryCommand::CreateFileInEnteredDirectoryCommand()
+CreateFileInEnteredDirectoryCommand::CreateFileInEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ CreateFileInEnteredDirectoryCommand::~CreateFileInEnteredDirectoryCommand()
 
 std::wstring CreateFileInEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Create file in entered directory";
+	return description;
 }
 
 void CreateFileInEnteredDirectoryCommand::Execute() const

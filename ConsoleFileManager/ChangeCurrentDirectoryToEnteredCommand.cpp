@@ -1,7 +1,8 @@
 #include "ChangeCurrentDirectoryToEnteredCommand.h"
 
-ChangeCurrentDirectoryToEnteredCommand::ChangeCurrentDirectoryToEnteredCommand()
+ChangeCurrentDirectoryToEnteredCommand::ChangeCurrentDirectoryToEnteredCommand(std::wstring description)
 {
+	this->description = description;
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
 }
@@ -14,7 +15,7 @@ ChangeCurrentDirectoryToEnteredCommand::~ChangeCurrentDirectoryToEnteredCommand(
 
 std::wstring ChangeCurrentDirectoryToEnteredCommand::GetDescription() const
 {
-	return L"Change current directory to entered";
+	return description;
 }
 
 void ChangeCurrentDirectoryToEnteredCommand::Execute() const

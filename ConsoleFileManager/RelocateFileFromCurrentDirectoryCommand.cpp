@@ -1,8 +1,9 @@
 #include "RelocateFileFromCurrentDirectoryCommand.h"
 
-RelocateFileFromCurrentDirectoryCommand::RelocateFileFromCurrentDirectoryCommand()
+RelocateFileFromCurrentDirectoryCommand::RelocateFileFromCurrentDirectoryCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect file to be relocated:";
+	this->description = description;
+	this->title = title;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	filesWorker = new FilesWorker();
@@ -23,7 +24,7 @@ RelocateFileFromCurrentDirectoryCommand::~RelocateFileFromCurrentDirectoryComman
 
 std::wstring RelocateFileFromCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Relocate file from current directory";
+	return description;
 }
 
 void RelocateFileFromCurrentDirectoryCommand::Execute() const

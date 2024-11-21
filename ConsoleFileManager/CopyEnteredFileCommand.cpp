@@ -1,7 +1,8 @@
 #include "CopyEnteredFileCommand.h"
 
-CopyEnteredFileCommand::CopyEnteredFileCommand()
+CopyEnteredFileCommand::CopyEnteredFileCommand(std::wstring description)
 {
+	this->description = description;
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ CopyEnteredFileCommand::~CopyEnteredFileCommand()
 
 std::wstring CopyEnteredFileCommand::GetDescription() const
 {
-	return L"Copy entered file";
+	return description;
 }
 
 void CopyEnteredFileCommand::Execute() const

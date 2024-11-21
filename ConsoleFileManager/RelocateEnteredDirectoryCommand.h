@@ -11,12 +11,13 @@
 
 class RelocateEnteredDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IDirectoriesWorker* directoriesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	RelocateEnteredDirectoryCommand();
+	RelocateEnteredDirectoryCommand(std::wstring description);
 	~RelocateEnteredDirectoryCommand();
 
 	std::wstring GetDescription() const override;

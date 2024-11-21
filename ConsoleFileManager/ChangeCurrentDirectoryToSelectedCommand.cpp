@@ -1,8 +1,9 @@
 #include "ChangeCurrentDirectoryToSelectedCommand.h"
 
-ChangeCurrentDirectoryToSelectedCommand::ChangeCurrentDirectoryToSelectedCommand()
+ChangeCurrentDirectoryToSelectedCommand::ChangeCurrentDirectoryToSelectedCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect new current directory:";
+	this->description = description;
+	this->title = title;
 	directoriesWorker = new DirectoriesWorker();
 	menuSelector = new ConsoleMenuSelector();
 }
@@ -15,7 +16,7 @@ ChangeCurrentDirectoryToSelectedCommand::~ChangeCurrentDirectoryToSelectedComman
 
 std::wstring ChangeCurrentDirectoryToSelectedCommand::GetDescription() const
 {
-	return L"Change current directory to selected";
+	return description;
 }
 
 void ChangeCurrentDirectoryToSelectedCommand::Execute() const

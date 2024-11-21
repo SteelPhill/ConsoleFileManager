@@ -17,6 +17,7 @@
 
 class RelocateDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
@@ -25,7 +26,7 @@ class RelocateDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	RelocateDirectoryFromCurrentDirectoryCommand();
+	RelocateDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title);
 	~RelocateDirectoryFromCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

@@ -1,8 +1,13 @@
 #include "ChangeCurrentDirectoryToPreviousCommand.h"
 
+ChangeCurrentDirectoryToPreviousCommand::ChangeCurrentDirectoryToPreviousCommand(std::wstring description)
+{
+	this->description = description;
+}
+
 std::wstring ChangeCurrentDirectoryToPreviousCommand::GetDescription() const
 {
-	return L"Change current directory to previous";
+	return description;
 }
 
 void ChangeCurrentDirectoryToPreviousCommand::Execute() const

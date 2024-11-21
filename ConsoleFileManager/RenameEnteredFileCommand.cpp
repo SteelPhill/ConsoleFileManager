@@ -1,7 +1,8 @@
 #include "RenameEnteredFileCommand.h"
 
-RenameEnteredFileCommand::RenameEnteredFileCommand()
+RenameEnteredFileCommand::RenameEnteredFileCommand(std::wstring description)
 {
+	this->description = description;
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ RenameEnteredFileCommand::~RenameEnteredFileCommand()
 
 std::wstring RenameEnteredFileCommand::GetDescription() const
 {
-	return L"Rename entered file";
+	return description;
 }
 
 void RenameEnteredFileCommand::Execute() const

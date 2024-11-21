@@ -1,8 +1,9 @@
 #include "ShowSelectedDirectorySizeCommand.h"
 
-ShowSelectedDirectorySizeCommand::ShowSelectedDirectorySizeCommand()
+ShowSelectedDirectorySizeCommand::ShowSelectedDirectorySizeCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect directory to display its size:";
+	this->description = description;
+	this->title = title;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	menuSelector = new ConsoleMenuSelector();
@@ -17,7 +18,7 @@ ShowSelectedDirectorySizeCommand::~ShowSelectedDirectorySizeCommand()
 
 std::wstring ShowSelectedDirectorySizeCommand::GetDescription() const
 {
-	return L"Show selected directory size";
+	return description;
 }
 
 void ShowSelectedDirectorySizeCommand::Execute() const

@@ -1,7 +1,8 @@
 #include "SubstringInCurrentAndNestedDirectoriesCommand.h"
 
-SubstringInCurrentAndNestedDirectoriesCommand::SubstringInCurrentAndNestedDirectoriesCommand()
+SubstringInCurrentAndNestedDirectoriesCommand::SubstringInCurrentAndNestedDirectoriesCommand(std::wstring description)
 {
+	this->description = description;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
@@ -18,7 +19,7 @@ SubstringInCurrentAndNestedDirectoriesCommand::~SubstringInCurrentAndNestedDirec
 
 std::wstring SubstringInCurrentAndNestedDirectoriesCommand::GetDescription() const
 {
-	return L"Search in current and nested directories";
+	return description;
 }
 
 void SubstringInCurrentAndNestedDirectoriesCommand::Execute() const

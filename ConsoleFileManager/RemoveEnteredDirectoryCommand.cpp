@@ -1,7 +1,8 @@
 #include "RemoveEnteredDirectoryCommand.h"
 
-RemoveEnteredDirectoryCommand::RemoveEnteredDirectoryCommand()
+RemoveEnteredDirectoryCommand::RemoveEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ RemoveEnteredDirectoryCommand::~RemoveEnteredDirectoryCommand()
 
 std::wstring RemoveEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Remove entered directory";
+	return description;
 }
 
 void RemoveEnteredDirectoryCommand::Execute() const

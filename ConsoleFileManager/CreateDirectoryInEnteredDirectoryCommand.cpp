@@ -1,7 +1,8 @@
 #include "CreateDirectoryInEnteredDirectoryCommand.h"
 
-CreateDirectoryInEnteredDirectoryCommand::CreateDirectoryInEnteredDirectoryCommand()
+CreateDirectoryInEnteredDirectoryCommand::CreateDirectoryInEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ CreateDirectoryInEnteredDirectoryCommand::~CreateDirectoryInEnteredDirectoryComm
 
 std::wstring CreateDirectoryInEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Create directory in entered directory";
+	return description;
 }
 
 void CreateDirectoryInEnteredDirectoryCommand::Execute() const

@@ -12,11 +12,12 @@ namespace fs = std::filesystem;
 
 class ChangeCurrentDirectoryToEnteredCommand : public IMenuCommand
 {
+	std::wstring description;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	ChangeCurrentDirectoryToEnteredCommand();
+	ChangeCurrentDirectoryToEnteredCommand(std::wstring description);
 	~ChangeCurrentDirectoryToEnteredCommand();
 
 	std::wstring GetDescription() const override;

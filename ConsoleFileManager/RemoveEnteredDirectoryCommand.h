@@ -11,12 +11,13 @@
 
 class RemoveEnteredDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IDirectoriesWorker* directoriesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	RemoveEnteredDirectoryCommand();
+	RemoveEnteredDirectoryCommand(std::wstring description);
 	~RemoveEnteredDirectoryCommand();
 
 	std::wstring GetDescription() const override;

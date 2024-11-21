@@ -1,7 +1,8 @@
 #include "RenameEnteredDirectoryCommand.h"
 
-RenameEnteredDirectoryCommand::RenameEnteredDirectoryCommand()
+RenameEnteredDirectoryCommand::RenameEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ RenameEnteredDirectoryCommand::~RenameEnteredDirectoryCommand()
 
 std::wstring RenameEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Rename entered directory";
+	return description;
 }
 
 void RenameEnteredDirectoryCommand::Execute() const

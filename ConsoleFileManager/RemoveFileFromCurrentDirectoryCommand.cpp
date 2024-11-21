@@ -1,8 +1,9 @@
 #include "RemoveFileFromCurrentDirectoryCommand.h"
 
-RemoveFileFromCurrentDirectoryCommand::RemoveFileFromCurrentDirectoryCommand()
+RemoveFileFromCurrentDirectoryCommand::RemoveFileFromCurrentDirectoryCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect file to be removed:";
+	this->description = description;
+	this->title = title;
 	directoriesWorker = new DirectoriesWorker();
 	filesWorker = new FilesWorker();
 	menuSelector = new ConsoleMenuSelector();
@@ -17,7 +18,7 @@ RemoveFileFromCurrentDirectoryCommand::~RemoveFileFromCurrentDirectoryCommand()
 
 std::wstring RemoveFileFromCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Remove file from current directory";
+	return description;
 }
 
 void RemoveFileFromCurrentDirectoryCommand::Execute() const

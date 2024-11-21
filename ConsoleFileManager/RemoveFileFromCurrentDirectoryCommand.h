@@ -13,13 +13,14 @@
 
 class RemoveFileFromCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IDirectoriesWorker* directoriesWorker;
 	IFilesWorker* filesWorker;
 	IMenuSelector* menuSelector;
 
 public:
-	RemoveFileFromCurrentDirectoryCommand();
+	RemoveFileFromCurrentDirectoryCommand(std::wstring description, std::wstring title);
 	~RemoveFileFromCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

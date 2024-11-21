@@ -8,10 +8,11 @@
 
 class ShowContentsCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IDirectoryContentWriter* contentWriter;
 
 public:
-	ShowContentsCurrentDirectoryCommand();
+	ShowContentsCurrentDirectoryCommand(std::wstring description);
 	~ShowContentsCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

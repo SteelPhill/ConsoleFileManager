@@ -17,6 +17,7 @@
 
 class CopyDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
@@ -25,7 +26,7 @@ class CopyDirectoryFromCurrentDirectoryCommand : public IMenuCommand
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	CopyDirectoryFromCurrentDirectoryCommand();
+	CopyDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title);
 	~CopyDirectoryFromCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

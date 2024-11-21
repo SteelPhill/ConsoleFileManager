@@ -1,8 +1,9 @@
 #include "RemoveDirectoryFromCurrentDirectoryCommand.h"
 
-RemoveDirectoryFromCurrentDirectoryCommand::RemoveDirectoryFromCurrentDirectoryCommand()
+RemoveDirectoryFromCurrentDirectoryCommand::RemoveDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect directory to be removed:";
+	this->description = description;
+	this->title = title;
 	directoriesWorker = new DirectoriesWorker();
 	menuSelector = new ConsoleMenuSelector();
 }
@@ -15,7 +16,7 @@ RemoveDirectoryFromCurrentDirectoryCommand::~RemoveDirectoryFromCurrentDirectory
 
 std::wstring RemoveDirectoryFromCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Remove directory from current directory";
+	return description;
 }
 
 void RemoveDirectoryFromCurrentDirectoryCommand::Execute() const

@@ -11,12 +11,13 @@
 
 class CopyEnteredDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IDirectoriesWorker* directoriesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	CopyEnteredDirectoryCommand();
+	CopyEnteredDirectoryCommand(std::wstring description);
 	~CopyEnteredDirectoryCommand();
 
 	std::wstring GetDescription() const override;

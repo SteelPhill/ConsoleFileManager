@@ -1,7 +1,8 @@
 #include "CopyEnteredDirectoryCommand.h"
 
-CopyEnteredDirectoryCommand::CopyEnteredDirectoryCommand()
+CopyEnteredDirectoryCommand::CopyEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ CopyEnteredDirectoryCommand::~CopyEnteredDirectoryCommand()
 
 std::wstring CopyEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Copy entered directory";
+	return description;
 }
 
 void CopyEnteredDirectoryCommand::Execute() const

@@ -1,7 +1,8 @@
 #include "ShowContentsEnteredDirectoryCommand.h"
 
-ShowContentsEnteredDirectoryCommand::ShowContentsEnteredDirectoryCommand()
+ShowContentsEnteredDirectoryCommand::ShowContentsEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	contentWriter = new DirectoryContentConsoleWriter();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ ShowContentsEnteredDirectoryCommand::~ShowContentsEnteredDirectoryCommand()
 
 std::wstring ShowContentsEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Show contents of entered directory";
+	return description;
 }
 
 void ShowContentsEnteredDirectoryCommand::Execute() const

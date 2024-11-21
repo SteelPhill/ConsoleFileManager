@@ -15,13 +15,14 @@
 
 class SubstringInOnlyCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	SubstringInOnlyCurrentDirectoryCommand();
+	SubstringInOnlyCurrentDirectoryCommand(std::wstring description);
 	~SubstringInOnlyCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

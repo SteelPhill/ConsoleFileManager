@@ -1,8 +1,9 @@
 #include "RenameDirectoryFromCurrentDirectoryCommand.h"
 
-RenameDirectoryFromCurrentDirectoryCommand::RenameDirectoryFromCurrentDirectoryCommand()
+RenameDirectoryFromCurrentDirectoryCommand::RenameDirectoryFromCurrentDirectoryCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect directory to be renamed:";
+	this->description = description;
+	this->title = title;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	menuSelector = new ConsoleMenuSelector();
@@ -21,7 +22,7 @@ RenameDirectoryFromCurrentDirectoryCommand::~RenameDirectoryFromCurrentDirectory
 
 std::wstring RenameDirectoryFromCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Rename directory from current directory";
+	return description;
 }
 
 void RenameDirectoryFromCurrentDirectoryCommand::Execute() const

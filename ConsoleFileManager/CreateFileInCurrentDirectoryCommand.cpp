@@ -1,7 +1,8 @@
 #include "CreateFileInCurrentDirectoryCommand.h"
 
-CreateFileInCurrentDirectoryCommand::CreateFileInCurrentDirectoryCommand()
+CreateFileInCurrentDirectoryCommand::CreateFileInCurrentDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	filesWorker = new FilesWorker();
 	stringReader = new ConsoleStringReader();
 	spacesChecker = new StringSpacesChecker();
@@ -16,7 +17,7 @@ CreateFileInCurrentDirectoryCommand::~CreateFileInCurrentDirectoryCommand()
 
 std::wstring CreateFileInCurrentDirectoryCommand::GetDescription() const
 {
-	return L"Create file in current directory";
+	return description;
 }
 
 void CreateFileInCurrentDirectoryCommand::Execute() const

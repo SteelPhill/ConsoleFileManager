@@ -1,8 +1,9 @@
 #include "ShowSelectedFileSizeCommand.h"
 
-ShowSelectedFileSizeCommand::ShowSelectedFileSizeCommand()
+ShowSelectedFileSizeCommand::ShowSelectedFileSizeCommand(std::wstring description, std::wstring title)
 {
-	title = L"\tSelect file to display its size:";
+	this->description = description;
+	this->title = title;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	filesWorker = new FilesWorker();
@@ -19,7 +20,7 @@ ShowSelectedFileSizeCommand::~ShowSelectedFileSizeCommand()
 
 std::wstring ShowSelectedFileSizeCommand::GetDescription() const
 {
-	return L"Show selected file size";
+	return description;
 }
 
 void ShowSelectedFileSizeCommand::Execute() const

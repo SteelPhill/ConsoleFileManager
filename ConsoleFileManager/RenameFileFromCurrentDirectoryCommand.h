@@ -19,6 +19,7 @@
 
 class RenameFileFromCurrentDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
@@ -28,7 +29,7 @@ class RenameFileFromCurrentDirectoryCommand : public IMenuCommand
 	IStringSpacesChecker* spaceChecker;
 
 public:
-	RenameFileFromCurrentDirectoryCommand();
+	RenameFileFromCurrentDirectoryCommand(std::wstring description, std::wstring title);
 	~RenameFileFromCurrentDirectoryCommand();
 
 	std::wstring GetDescription() const override;

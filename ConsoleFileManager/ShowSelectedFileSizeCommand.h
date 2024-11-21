@@ -15,6 +15,7 @@
 
 class ShowSelectedFileSizeCommand : public IMenuCommand
 {
+	std::wstring description;
 	std::wstring title;
 	IColoredTextWriter* coloredTextWriter;
 	IDirectoriesWorker* directoriesWorker;
@@ -22,7 +23,7 @@ class ShowSelectedFileSizeCommand : public IMenuCommand
 	IMenuSelector* menuSelector;
 
 public:
-	ShowSelectedFileSizeCommand();
+	ShowSelectedFileSizeCommand(std::wstring description, std::wstring title);
 	~ShowSelectedFileSizeCommand();
 
 	std::wstring GetDescription() const override;

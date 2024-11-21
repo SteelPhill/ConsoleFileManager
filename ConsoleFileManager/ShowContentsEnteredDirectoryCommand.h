@@ -11,12 +11,13 @@
 
 class ShowContentsEnteredDirectoryCommand : public IMenuCommand
 {
+	std::wstring description;
 	IDirectoryContentWriter* contentWriter;
 	IStringReader* stringReader;
 	IStringSpacesChecker* spacesChecker;
 
 public:
-	ShowContentsEnteredDirectoryCommand();
+	ShowContentsEnteredDirectoryCommand(std::wstring description);
 	~ShowContentsEnteredDirectoryCommand();
 
 	std::wstring GetDescription() const override;

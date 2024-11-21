@@ -1,7 +1,8 @@
 #include "SubstringInOnlyEnteredDirectoryCommand.h"
 
-SubstringInOnlyEnteredDirectoryCommand::SubstringInOnlyEnteredDirectoryCommand()
+SubstringInOnlyEnteredDirectoryCommand::SubstringInOnlyEnteredDirectoryCommand(std::wstring description)
 {
+	this->description = description;
 	coloredTextWriter = new ColoredTextConsoleWriter();
 	directoriesWorker = new DirectoriesWorker();
 	stringReader = new ConsoleStringReader();
@@ -18,7 +19,7 @@ SubstringInOnlyEnteredDirectoryCommand::~SubstringInOnlyEnteredDirectoryCommand(
 
 std::wstring SubstringInOnlyEnteredDirectoryCommand::GetDescription() const
 {
-	return L"Search in only entered directory";
+	return description;
 }
 
 void SubstringInOnlyEnteredDirectoryCommand::Execute() const
