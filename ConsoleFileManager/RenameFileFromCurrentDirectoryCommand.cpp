@@ -42,7 +42,7 @@ void RenameFileFromCurrentDirectoryCommand::Execute() const
 	coloredTextWriter->Write(CurrentDirectory::Path, Constants::BlackOnWhiteTextCode);
 	std::wcout << std::endl << std::endl;
 
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter new name" << std::endl << std::endl;
 	std::wstring newName = stringReader->Read();

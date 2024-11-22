@@ -24,7 +24,7 @@ std::wstring SubstringInCurrentAndNestedDirectoriesCommand::GetDescription() con
 
 void SubstringInCurrentAndNestedDirectoriesCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter searched substring" << std::endl << std::endl;
 	std::wstring searchedText = stringReader->Read();

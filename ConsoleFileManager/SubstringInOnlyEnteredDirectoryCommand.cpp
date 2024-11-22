@@ -24,7 +24,7 @@ std::wstring SubstringInOnlyEnteredDirectoryCommand::GetDescription() const
 
 void SubstringInOnlyEnteredDirectoryCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter path to directory to search for substring" << std::endl << std::endl;
 	std::wstring directoryToSearch = stringReader->Read();

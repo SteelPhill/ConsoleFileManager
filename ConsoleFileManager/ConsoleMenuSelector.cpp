@@ -13,7 +13,7 @@ ConsoleMenuSelector::~ConsoleMenuSelector()
 int ConsoleMenuSelector::Select(const std::wstring& title, const std::vector<IMenuCommand*> commands, int& selector) const
 {
     int key;
-    int itemsNumber = (int)commands.size();
+    auto itemsNumber = (int)commands.size();
 
     do
     {
@@ -45,8 +45,8 @@ int ConsoleMenuSelector::Select(const std::wstring& title, const std::vector<IMe
 std::wstring ConsoleMenuSelector::Select(const std::wstring& title, const std::vector<std::wstring> items) const
 {
     int key;
-    int selector = 0;
-    int itemsNumber = (int)items.size();
+    auto selector = 0;
+    auto itemsNumber = (int)items.size();
 
     do
     {

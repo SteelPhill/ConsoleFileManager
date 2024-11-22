@@ -24,7 +24,7 @@ std::wstring ShowEnteredFileSizeCommand::GetDescription() const
 
 void ShowEnteredFileSizeCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter file path to display its size" << std::endl << std::endl;
 	std::wstring enteredFile = stringReader->Read();

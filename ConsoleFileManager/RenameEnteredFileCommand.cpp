@@ -22,7 +22,7 @@ std::wstring RenameEnteredFileCommand::GetDescription() const
 
 void RenameEnteredFileCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter file path to be renamed" << std::endl << std::endl;
 	std::wstring fileToRename = stringReader->Read();

@@ -22,7 +22,7 @@ std::wstring CopyEnteredFileCommand::GetDescription() const
 
 void CopyEnteredFileCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter file path to be copied" << std::endl << std::endl;
 	std::wstring fileToCopy = stringReader->Read();

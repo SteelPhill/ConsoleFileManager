@@ -20,7 +20,7 @@ std::wstring ChangeCurrentDirectoryToEnteredCommand::GetDescription() const
 
 void ChangeCurrentDirectoryToEnteredCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter new current directory path" << std::endl << std::endl;
 	std::wstring newCurrentDirectory = stringReader->Read();

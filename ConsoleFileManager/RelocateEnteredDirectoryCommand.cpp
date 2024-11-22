@@ -22,7 +22,7 @@ std::wstring RelocateEnteredDirectoryCommand::GetDescription() const
 
 void RelocateEnteredDirectoryCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter directory path to be relocated" << std::endl << std::endl;
 	std::wstring directoryToRelocate = stringReader->Read();

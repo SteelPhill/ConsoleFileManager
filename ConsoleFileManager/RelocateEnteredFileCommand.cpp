@@ -22,7 +22,7 @@ std::wstring RelocateEnteredFileCommand::GetDescription() const
 
 void RelocateEnteredFileCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter file path to be relocated" << std::endl << std::endl;
 	std::wstring fileToRelocate = stringReader->Read();

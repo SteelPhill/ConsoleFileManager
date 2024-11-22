@@ -14,7 +14,7 @@ ConsoleMenuWriter::~ConsoleMenuWriter()
 
 void ConsoleMenuWriter::Write(const std::wstring& title, const std::vector<IMenuCommand*> commands, int& selector) const
 {
-    int itemsNumber = (int)commands.size();
+    auto itemsNumber = (int)commands.size();
 
     system("cls");
 
@@ -50,7 +50,7 @@ void ConsoleMenuWriter::Write(const std::wstring& title, const std::vector<IMenu
 
 void ConsoleMenuWriter::Write(const std::wstring& title, const std::vector<std::wstring> items, int& selector) const
 {
-    int itemsNumber = (int)items.size();
+    auto itemsNumber = (int)items.size();
 
     system("cls");
 

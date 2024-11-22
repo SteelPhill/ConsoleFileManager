@@ -22,7 +22,7 @@ std::wstring CreateFileInCurrentDirectoryCommand::GetDescription() const
 
 void CreateFileInCurrentDirectoryCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter new file name" << std::endl << std::endl;
 	std::wstring name = stringReader->Read();

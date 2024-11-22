@@ -22,7 +22,7 @@ std::wstring CreateFileInEnteredDirectoryCommand::GetDescription() const
 
 void CreateFileInEnteredDirectoryCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter path to destination directory" << std::endl << std::endl;
 	std::wstring destinationDirectory = stringReader->Read();

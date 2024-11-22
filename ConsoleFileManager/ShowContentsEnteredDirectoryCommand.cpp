@@ -22,7 +22,7 @@ std::wstring ShowContentsEnteredDirectoryCommand::GetDescription() const
 
 void ShowContentsEnteredDirectoryCommand::Execute() const
 {
-	std::wcout << "\t" << GetDescription() << ":" << std::endl << std::endl;
+	std::wcout << "\t" << description << ":" << std::endl << std::endl;
 
 	std::wcout << "Enter path to directory to display its contents" << std::endl << std::endl;
 	std::wstring enteredDirectory = stringReader->Read();

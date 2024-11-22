@@ -4,8 +4,8 @@
 #include <fcntl.h>
 #include "IMenu.h"
 #include "ConsoleMenu.h"
-#include "SubmenuExecuterCommand.h"
 #include "CurrentDirectory.h"
+#include "SubmenuExecuterCommand.h"
 #include "ShowContentsCurrentDirectoryCommand.h"
 #include "ShowContentsEnteredDirectoryCommand.h"
 #include "ChangeCurrentDirectoryToEnteredCommand.h"

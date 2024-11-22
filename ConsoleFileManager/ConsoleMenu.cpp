@@ -48,7 +48,7 @@ void ConsoleMenu::AddCommand(IMenuCommand* command)
 
 void ConsoleMenu::Start()
 {
-	int selector = 0;
+	auto selector = 0;
 
 	while (true)
 	{
